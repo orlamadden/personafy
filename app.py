@@ -1,14 +1,11 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
+@app.route('/home')
 def index():
-    return '<h1>Home Page!</h1>'
-
-@app.route('/examples')
-def examples():
-    return '<h1>Example Personas</h1>'
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
