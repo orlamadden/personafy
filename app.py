@@ -9,15 +9,15 @@ if path.exists("env.py"):
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
-app.config["secret_key"] = os.environ.get('SECRET_KEY')
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/home')
 def index():
-    return render_template('home.html')
+    return render_template('home.html', personas=mongo.db.persona.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
