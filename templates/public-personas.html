@@ -2,11 +2,12 @@
 
 <h2>Public page</h2>
 
-{% for persona in personas %}
+
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+  {% for persona in personas %}
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
         <div class="card">
           <img class="card-img-top" src="..." alt="Card image cap" />
           <div class="card-body">
@@ -18,7 +19,8 @@
           </div>
         </div>
     </div>
+  {% endfor %}
   </div>
 </div>
 
-{% endfor %} {% endblock %}
+{% endblock %}
