@@ -1,6 +1,7 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash
 from flask_pymongo import PyMongo
+from forms import CreatePersonaForm
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -27,9 +28,13 @@ def public_personas():
     personas=mongo.db.persona.find())
 
 
-@app.route('/add-persona')
+@app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
-    return render_template('add-persona.html')
+    form = CreatePersonaForm()
+    if form.validate_on_submit():
+        flash('Your persona has been created!', 'success')
+        return redirect(url_for('public_personas'))
+    return render_template('add-persona.html', title='Add Persona', form=form)
 
 
 if __name__ == '__main__':
