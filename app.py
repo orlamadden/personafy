@@ -14,6 +14,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -22,7 +23,14 @@ def index():
 
 @app.route('/public-personas')
 def public_personas():
-    return render_template('public-personas.html', personas=mongo.db.persona.find())
+    return render_template('public-personas.html',
+    personas=mongo.db.persona.find())
+
+
+@app.route('/add-persona')
+def add_persona():
+    return render_template('add-persona.html')
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
