@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h2>Public page</h2>
 
 {% for persona in personas %}
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-                {{persona.name}}
-                {{persona.age}}
-                {{persona.gender}}
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top" src="..." alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{persona.name}}</h5>
+            <p class="card-text">
+              {{persona.age}} {{persona.gender}}
+            </p>
+            <a href="#" class="btn btn-primary">View Persona</a>
+          </div>
         </div>
     </div>
+  </div>
 </div>
-    
 
-{% endfor %}
-
-{% endblock %}
+{% endfor %} {% endblock %}
