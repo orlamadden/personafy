@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, flash
+from flask import Flask, render_template, url_for
 from flask_pymongo import PyMongo
 from forms import CreatePersonaForm
 from bson.objectid import ObjectId
@@ -15,10 +15,13 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+db = mongo.db
 
 @app.route('/')
 @app.route('/index')
 def index():
+    user_collection = db.user
+    user_collection.insert({'name': 'Orla'})
     return render_template('index.html')
 
 
@@ -31,9 +34,6 @@ def public_personas():
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
     form = CreatePersonaForm()
-    if form.validate_on_submit():
-        flash('Your persona has been created!', 'success')
-        return redirect(url_for('public_personas'))
     return render_template('add-persona.html', title='Add Persona', form=form)
 
 
