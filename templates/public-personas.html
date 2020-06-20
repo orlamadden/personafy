@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Public page</h2>
+
+{% for persona in personas %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+                {{persona.name}}
+                {{persona.age}}
+                {{persona.gender}}
+        </div>
+    </div>
+</div>
+    
+
+{% endfor %}
+
+{% endblock %}
