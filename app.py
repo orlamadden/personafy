@@ -17,7 +17,12 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', personas=mongo.db.persona.find())
+    return render_template('index.html')
+
+
+@app.route('/public-personas')
+def public_personas():
+    return render_template('public-personas.html', personas=mongo.db.persona.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
