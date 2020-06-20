@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<h1>Other page</h1>
+
+{% block content %}
+
+{% for persona in personas %}
+
+    {{persona.name}}
+    {{persona.age}}
+    {{persona.gender}}
+
+{% endfor %}
+
+{% endblock %}
