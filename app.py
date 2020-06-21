@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_pymongo import PyMongo
 from forms import CreatePersonaForm
 from bson.objectid import ObjectId
@@ -20,8 +20,6 @@ db = mongo.db
 @app.route('/')
 @app.route('/index')
 def index():
-    user_collection = db.user
-    user_collection.insert({'name': 'Orla'})
     return render_template('index.html')
 
 
@@ -33,8 +31,12 @@ def public_personas():
 
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
-    form = CreatePersonaForm()
-    return render_template('add-persona.html', title='Add Persona', form=form)
+    add_persona_form = CreatePersonaForm()
+    persona = db.persona
+    if request.method == 'POST':
+        persona.insert_one(request.form.to_dict())
+        return '<h1>Successfully added persona!</h1>'
+    return render_template('add-persona.html', form=add_persona_form)
 
 
 if __name__ == '__main__':
