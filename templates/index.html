@@ -1,12 +1,37 @@
 {% extends 'base.html' %} {% block content %}
-
-<div class="container hero-image d-flex align-items-center">
+<!-- hero block -->
+<section class="container hero-image d-flex align-items-center">
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12">
       <h1>Welcome to Personafy</h1>
       <p>Create custom user personas in minutes</p>
+      <button class="btn btn-primary" type="submit">Learn more</button>
     </div>
   </div>
-</div>
+</section>
+<!-- icon block -->
+<section class="icon-block">
+  <div class="container pt-5 pb-5">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <div class="icon-box">
+            <span class="home-icons"><i class="fas fa-search-plus"></i></span>
+            <h3>Title</h3>
+            <p>Don't underestimate the Force. I don't know what you're talking about. I am a member of the Imperial Senate on a diplomatic mission to Alderaan-- Alderaan?</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <span class="home-icons"><i class="fas fa-search-plus"></i></span>
+            <h3>Title</h3>
+            <p>Don't underestimate the Force. I don't know what you're talking about. I am a member of the Imperial Senate on a diplomatic mission to Alderaan-- Alderaan?</p>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <span class="home-icons"><i class="fas fa-search-plus"></i></span>
+            <h3>Title</h3>
+            <p>Don't underestimate the Force. I don't know what you're talking about. I am a member of the Imperial Senate on a diplomatic mission to Alderaan-- Alderaan?</p>  
+        </div>
+      </div>
+  </div>
+</section>
 
 {% endblock content %}
