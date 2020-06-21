@@ -4,3 +4,12 @@
     height: 75vh;
     position: relative;
 }
+
+.icon-block {
+    background-color: antiquewhite;
+}
+
+.home-icons i {
+    font-size: 3em;
+    color: #007BFF;
+}
