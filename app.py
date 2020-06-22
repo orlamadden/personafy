@@ -28,6 +28,12 @@ def public_personas():
     return render_template('public-personas.html',
     personas=mongo.db.persona.find())
 
+@app.route('/view-persona/<persona_id>', methods=["GET", "POST"])
+def view_persona(persona_id):
+    the_persona = db.persona.find_one({"_id": ObjectId(persona_id)})
+    return render_template('persona-card.html',
+    persona=the_persona)
+
 
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
