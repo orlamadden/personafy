@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, url_for, request
 from flask_pymongo import PyMongo
-from forms import CreatePersonaForm
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -37,12 +36,19 @@ def view_persona(persona_id):
 
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
-    add_persona_form = CreatePersonaForm()
     persona = db.persona
     if request.method == 'POST':
-        persona.insert_one(request.form.to_dict())
+        persona.insert_one({
+            'name': add_persona_form.name.data,
+            'age': add_persona_form.age.data,
+            'status': add_persona_form.status.data,
+            'occupation': add_persona_form.occupation.data
+        })
+    
+    
+
         return '<h1>Successfully added persona!</h1>'
-    return render_template('add-persona.html', form=add_persona_form)
+    return render_template('add-persona.html')
 
 
 if __name__ == '__main__':
