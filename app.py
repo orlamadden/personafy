@@ -43,8 +43,11 @@ def add_persona():
         persona.insert_one({
             'name': request.form.get('fname'),
             'age': request.form.get('age'),
+            'bio': request.form.get('bio'),
             'occupation_title': request.form.get('occupation'),
-            'sector': request.form.get('sector')
+            'sector': request.form.get('sector'),
+            'goals': request.form.get('goals'),
+            'frustrations': request.form.get('frustrations')
         })
     
         return '<h1>Successfully added persona!</h1>'
