@@ -37,18 +37,18 @@ def view_persona(persona_id):
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
     persona = db.persona
+    occupation = db.occupation.find()
+    industry = db.industry.find()
     if request.method == 'POST':
         persona.insert_one({
-            'name': add_persona_form.name.data,
-            'age': add_persona_form.age.data,
-            'status': add_persona_form.status.data,
-            'occupation': add_persona_form.occupation.data
+            'name': request.form.get('fname'),
+            'age': request.form.get('age'),
+            'occupation_title': request.form.get('occupation'),
+            'sector': request.form.get('sector')
         })
     
-    
-
         return '<h1>Successfully added persona!</h1>'
-    return render_template('add-persona.html')
+    return render_template('add-persona.html', persona=persona, occupation=occupation, industry=industry)
 
 
 if __name__ == '__main__':
