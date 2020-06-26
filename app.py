@@ -53,6 +53,13 @@ def add_persona():
         return '<h1>Successfully added persona!</h1>'
     return render_template('add-persona.html', persona=persona, occupation=occupation, industry=industry)
 
+@app.route('/edit_persona/<persona_id>', methods=['GET', 'POST'])
+def edit_persona(persona_id):
+    the_persona = db.persona.find_one({'_id': ObjectId(persona_id)})
+    all_occupation = db.occupation.find()
+    all_industry = db.industry.find()
+    return render_template('edit-persona.html', persona=the_persona, occupation=all_occupation, industry=all_industry)
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
