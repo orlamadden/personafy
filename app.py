@@ -45,7 +45,7 @@ def add_persona():
             'age': request.form.get('age'),
             'bio': request.form.get('bio'),
             'occupation_title': request.form.get('occupation'),
-            'sector': request.form.get('sector'),
+            'industry_title': request.form.get('industry'),
             'goals': request.form.get('goals'),
             'frustrations': request.form.get('frustrations')
         })

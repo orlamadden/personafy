@@ -37,11 +37,11 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="sector">Select Industry</label>
-          <select class="form-control" id="sector" name="sector">
+          <label for="industry">Select Industry</label>
+          <select class="form-control" id="industry" name="industry">
           <option selected>Please select...</option>
             {% for sector in industry %}
-            <option>{{ sector.industry }}</option>
+            <option>{{ sector.industry_title }}</option>
             {% endfor %}
           </select>
         </div>
