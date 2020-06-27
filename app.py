@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -88,6 +88,7 @@ def delete_persona(persona_id):
 def register():
     user = db.user
     if request.method == 'POST':
+        new_username = request.form.get('username').lower()
         username_exists = user.find_one({'name': request.form.get('username')})
         if username_exists is None:
             user.insert_one(
@@ -95,7 +96,8 @@ def register():
                     'name' : request.form.get('username'), 
                     'password' : generate_password_hash('password')
                 })
-
+            session['username'] = request.form.get('username')
+            flash('Welcome', 'success')
             return redirect(url_for('index'))
         
     return render_template('register.html')
