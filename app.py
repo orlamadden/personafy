@@ -2,6 +2,8 @@ import os
 from flask import Flask, render_template, url_for, request, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
+
 from os import path
 if path.exists("env.py"):
     import env
@@ -82,6 +84,25 @@ def delete_persona(persona_id):
     persona.remove({'_id': ObjectId(persona_id)})
     return redirect(url_for('public_personas'))
 
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    user = db.user
+    if request.method == 'POST':
+        username_exists = user.find_one({'name': request.form.get('username')})
+        if username_exists is None:
+            user.insert_one(
+                {
+                    'name' : request.form.get('username'), 
+                    'password' : generate_password_hash('password')
+                })
+
+            return redirect(url_for('index'))
+        
+    return render_template('register.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
