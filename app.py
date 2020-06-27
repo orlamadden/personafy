@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -27,7 +27,7 @@ def public_personas():
     return render_template('public-personas.html',
     personas=mongo.db.persona.find())
 
-@app.route('/view-persona/<persona_id>', methods=["GET", "POST"])
+@app.route('/view-persona/<persona_id>')
 def view_persona(persona_id):
     the_persona = db.persona.find_one({"_id": ObjectId(persona_id)})
     return render_template('persona-card.html',
@@ -53,12 +53,28 @@ def add_persona():
         return '<h1>Successfully added persona!</h1>'
     return render_template('add-persona.html', persona=persona, occupation=occupation, industry=industry)
 
-@app.route('/edit_persona/<persona_id>', methods=['GET', 'POST'])
+@app.route('/edit_persona/<persona_id>')
 def edit_persona(persona_id):
     the_persona = db.persona.find_one({'_id': ObjectId(persona_id)})
     all_occupation = db.occupation.find()
     all_industry = db.industry.find()
     return render_template('edit-persona.html', persona=the_persona, occupation=all_occupation, industry=all_industry)
+
+@app.route('/update_persona/<persona_id>', methods=['GET', 'POST'])
+def update_persona(persona_id):
+    persona = db.persona
+    persona.update({'_id': ObjectId(persona_id)},
+    {
+        'name': request.form.get('fname'),
+        'age': request.form.get('age'),
+        'bio': request.form.get('bio'),
+        'occupation_title': request.form.get('occupation'),
+        'industry_title': request.form.get('industry'),
+        'goals': request.form.get('goals'),
+        'frustrations': request.form.get('frustrations')
+    })
+    
+    return redirect(url_for('public_personas'))
 
 
 if __name__ == '__main__':
