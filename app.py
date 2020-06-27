@@ -76,6 +76,12 @@ def update_persona(persona_id):
     
     return redirect(url_for('public_personas'))
 
+@app.route('/delete_persona/<persona_id>')
+def delete_persona(persona_id):
+    persona = db.persona
+    persona.remove({'_id': ObjectId(persona_id)})
+    return redirect(url_for('public_personas'))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
