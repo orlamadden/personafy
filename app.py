@@ -139,6 +139,11 @@ def logout():
     flash('You have been logged out', 'success')
     return redirect(url_for('index'))
 
+@app.route('/my_personas')
+def my_personas():
+    return render_template('my-personas.html',
+    personas=mongo.db.persona.find())
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
