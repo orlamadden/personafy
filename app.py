@@ -18,6 +18,10 @@ mongo = PyMongo(app)
 
 db = mongo.db
 
+def registered_user(username):
+    user = db.user
+    return user.find_one({"name": username})
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -89,22 +93,43 @@ def register():
     user = db.user
     if request.method == 'POST':
         new_username = request.form.get('username').lower()
+        password = request.form.get('password')
         username_exists = user.find_one({'name': request.form.get('username')})
         if username_exists is None:
             user.insert_one(
                 {
                     'name' : request.form.get('username'), 
-                    'password' : generate_password_hash('password')
+                    'password' : generate_password_hash(password)
                 })
             new_user = request.form.get('username')
             session['username'] = new_user
             flash(f'Welcome {new_user}', 'success')
-            return redirect(url_for('index'))
+            return redirect(url_for('index', username=session["user"]))
         
     return render_template('register.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        username = request.form.get('reg_username')
+        password = request.form.get('user_password')
+        reg_user = registered_user(username)
+
+        if reg_user:
+            if check_password_hash(reg_user["password"], password):
+                flash(f"Welcome back {username}", "success")
+                session["user"] = username
+                return redirect(url_for('index', username=session["user"]))
+
+            else:
+                # Login validation
+                flash(f"The password or username {username} does not exist and details do not match our records")
+                return redirect(url_for('login'))
+        
+        else:
+            flash(f"The username {username} does not exist")
+            return redirect(url_for('login'))
+
     return render_template('login.html')
 
 @app.route('/logout')
