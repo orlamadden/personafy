@@ -118,7 +118,7 @@ def login():
         if reg_user:
             if check_password_hash(reg_user["password"], password):
                 flash(f"Welcome back {username}", "success")
-                session["user"] = username
+                session["username"] = username
                 return redirect(url_for('index', username=session["user"]))
 
             else:
