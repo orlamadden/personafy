@@ -96,8 +96,9 @@ def register():
                     'name' : request.form.get('username'), 
                     'password' : generate_password_hash('password')
                 })
-            session['username'] = request.form.get('username')
-            flash('Welcome', 'success')
+            new_user = request.form.get('username')
+            session['username'] = new_user
+            flash(f'Welcome {new_user}', 'success')
             return redirect(url_for('index'))
         
     return render_template('register.html')
@@ -105,6 +106,12 @@ def register():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('You have been logged out', 'success')
+    return redirect(url_for('index'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
