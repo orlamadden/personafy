@@ -9,8 +9,12 @@
             <p class="card-text">
               {{persona.age}} {{persona.gender}}
             </p>
-            <a href="{{url_for('edit_persona', persona_id=persona._id) }}" class="btn btn-primary">Edit Persona</a>
-            <a href="{{url_for('delete_persona', persona_id=persona._id) }}" class="btn btn-primary">Delete Persona</a>
+            <a
+            href="#"
+            id="print-btn"
+            class="btn btn-primary"
+            >Print</a
+          >
           </div>
         </div>
     </div>
