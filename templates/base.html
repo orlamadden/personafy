@@ -71,10 +71,13 @@
               <a class="nav-link" href="{{url_for('add_persona')}}">Add Persona</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+              <a class="nav-link" href="{{url_for('my_personas')}}">My Personas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('register')}}">Register</a>
+              <a class="nav-link text-white username-link" href="#">{{ session['username'] }}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
             </li>
           </ul>
           {% else %}
