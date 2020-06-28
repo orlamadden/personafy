@@ -13,3 +13,9 @@
     font-size: 3em;
     color: #007BFF;
 }
+
+/* Navigation menu */
+li .username-link {
+    background-color:#007BFF;
+    border-radius: 10px;
+}
