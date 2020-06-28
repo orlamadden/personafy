@@ -53,7 +53,8 @@ def add_persona():
             'occupation_title': request.form.get('occupation'),
             'industry_title': request.form.get('industry'),
             'goals': request.form.get('goals'),
-            'frustrations': request.form.get('frustrations')
+            'frustrations': request.form.get('frustrations'),
+            'creator': session['username']
         })
     
         return '<h1>Successfully added persona!</h1>'
