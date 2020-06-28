@@ -95,16 +95,16 @@ def register():
         new_username = request.form.get('username').lower()
         password = request.form.get('password')
         username_exists = user.find_one({'name': request.form.get('username')})
+        
         if username_exists is None:
             user.insert_one(
                 {
-                    'name' : request.form.get('username'), 
-                    'password' : generate_password_hash(password)
+                    'name' : new_username, 
+                    'password': generate_password_hash(password)
                 })
-            new_user = request.form.get('username')
-            session['username'] = new_user
-            flash(f'Welcome {new_user}', 'success')
-            return redirect(url_for('index', username=session["user"]))
+            session['username'] = new_username
+            flash(f'Welcome {new_username}', 'success')
+            return redirect(url_for('index', username=session["username"]))
         
     return render_template('register.html')
 
@@ -118,9 +118,9 @@ def login():
         if reg_user:
             if check_password_hash(reg_user["password"], password):
                 flash(f"Welcome back {username}", "success")
-                session["username"] = username
-                return redirect(url_for('index', username=session["user"]))
-
+                session['username'] = username
+                return redirect(url_for('index', username=session["username"]))
+                
             else:
                 # Login validation
                 flash(f"The password or username {username} does not exist and details do not match our records")
