@@ -1,25 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Public page</h2>
-
-
-
-<div class="container">
+<div class="container pt-5">
   <div class="row">
-  {% for persona in personas %}
-    <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">{{persona.name}}</h5>
-            <p class="card-text">
-              {{persona.age}} {{persona.gender}}
-            </p>
-            <a href="{{ url_for('view_persona', persona_id=persona._id)}}" class="btn btn-primary">View Persona</a>
-          </div>
-        </div>
+  <div class="col-sm-12">
+    <h2>Example User Personas</h2>
+    <p>A curated collection of user personas for inspiration and references.
+    </br>All personas are built by Personafy's fantastic community of creators</p>
     </div>
-  {% endfor %}
+  </div>
+</div>
+
+<div class="container pt-5">
+  <div class="row">
+    {% for persona in personas %}
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+      <div class="card">
+        <img class="card-img-top" src="{{ persona.profile }}" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title">{{persona.name}}</h5>
+          <p class="card-text">
+            {{persona.age}} {{persona.gender}}
+          </p>
+          <a
+            href="{{ url_for('view_persona', persona_id=persona._id)}}"
+            class="btn btn-primary"
+            >View Persona</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 
