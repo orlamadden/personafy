@@ -6,15 +6,51 @@
 }
 
 .icon-block {
-    background-color: antiquewhite;
+    background-color: rgb(193, 223, 255);
 }
 
 .home-icons i {
-    font-size: 3em;
+    font-size: 2em;
     color: #007BFF;
+    padding-bottom: 15px;
+}
+
+.extra-info {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    padding-bottom: 10px;
 }
 
 /* Navigation menu */
+
+nav a {
+    font-size: 0.875em;
+}
+
+.navbar-custom > li{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.primary-link {
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.primary-link-txt {
+    color: rgb(255, 255, 255);
+}
+
+.secondary-link {
+    border: 1px solid rgb(176, 186, 197);
+    border-radius: 5px;
+    /* padding: 8px 15px 8px 15px; */
+}
+
+.secondary-link-txt {
+    color: #007BFF;
+}
+
 .username-link {
     background-color:#007BFF;
     border-radius: 10px;
