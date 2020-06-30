@@ -27,7 +27,6 @@ def registered_user(username):
 def index():
     return render_template('index.html')
 
-
 @app.route('/public-personas')
 def public_personas():
     return render_template('public-personas.html',
@@ -38,7 +37,6 @@ def view_persona(persona_id):
     the_persona = db.persona.find_one({"_id": ObjectId(persona_id)})
     return render_template('persona-card.html',
     persona=the_persona)
-
 
 @app.route('/add-persona', methods=['GET','POST'])
 def add_persona():
@@ -58,7 +56,7 @@ def add_persona():
             'creator': session['username']
         })
     
-        return '<h1>Successfully added persona!</h1>'
+        return redirect(url_for('public_personas'))
     return render_template('add-persona.html', persona=persona, occupation=occupation, industry=industry)
 
 @app.route('/edit_persona/<persona_id>')
@@ -97,7 +95,14 @@ def register():
         new_username = request.form.get('username').lower()
         password = request.form.get('password')
         username_exists = user.find_one({'name': request.form.get('username')})
-        
+
+        # if username entry is not a letter or number, flash message
+        for entry in new_username:
+            if not entry.isalnum():
+                flash("You can only use letters (a-z) and numbers (1-10) for your username")
+                return redirect(url_for('register'))
+
+        # checks database if username exists
         if username_exists is None:
             user.insert_one(
                 {
@@ -137,7 +142,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('You have been logged out', 'success')
+    flash('You have been logged out')
     return redirect(url_for('index'))
 
 @app.route('/my_personas')
