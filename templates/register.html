@@ -1,7 +1,22 @@
 {% extends 'base.html' %} {% block content %}
 
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning" role="alert">
+            <p class="center-align messages text-center" id="message">{{ message }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12">
 <h1 class="text-center">Register</h1>
-<div class="container">
+</div></div></div>
+
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-6">
       <form method='POST' action="{{ url_for('register') }}">
@@ -27,9 +42,9 @@
           />
         </div>
         <small id="emailHelp" class="form-text text-muted"
-            >Already have an account? Log in.</small
+            >Already have an account? <a href="{{ url_for('login') }}">Log in.</a></small
           >
-        <button type="submit" class="btn btn-primary">Register now</button>
+        <button type="submit" class="btn btn-primary mt-3">Register now</button>
       </form>
     </div>
   </div>
