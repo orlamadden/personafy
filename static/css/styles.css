@@ -77,3 +77,9 @@ nav a {
 -moz-box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
 box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
 }
+
+.card-image {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
