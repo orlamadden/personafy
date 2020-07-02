@@ -19,12 +19,21 @@
             class="form-control"
             id="fname"
             name="fname"
-            placeholder="Full name" required
+            placeholder="Full name"
+            required
           />
         </div>
         <div class="form-group">
           <label for="age">Age *</label>
-          <input class="form-control" type="number" id="age" name="age" min="1" max="99" required />
+          <input
+            class="form-control"
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="99"
+            required
+          />
         </div>
         <div class="form-group">
           <label for="goals">Bio *</label>
@@ -33,7 +42,8 @@
             name="bio"
             id="bio"
             rows="3"
-          required></textarea>
+            required
+          ></textarea>
         </div>
         <div class="form-group">
           <label for="basic-url">Persona profile (optional)</label>
@@ -55,7 +65,12 @@
         </div>
         <div class="form-group">
           <label for="occupation">Select Occupation *</label>
-          <select class="form-control" id="occupation" name="occupation" required>
+          <select
+            class="form-control"
+            id="occupation"
+            name="occupation"
+            required
+          >
             <option selected disabled>Please select...</option>
             {% for job in occupation %}
             <option>{{ job.occupation_title }}</option>
@@ -78,7 +93,8 @@
             name="goals"
             id="goals"
             rows="2"
-          required></textarea>
+            required
+          ></textarea>
           <button type="button" class="btn btn-primary">
             <i class="fas fa-plus"></i><span>Add line</span>
           </button>
@@ -93,7 +109,8 @@
             id="frustrations"
             name="frustrations"
             rows="2"
-          required></textarea>
+            required
+          ></textarea>
           <button type="button" class="btn btn-primary">
             <i class="fas fa-plus"></i><span>Add line</span>
           </button>

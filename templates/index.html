@@ -1,14 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <!-- hero block -->
-{% with messages = get_flashed_messages() %}
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success text-center" role="alert">
-            <p class="center-align messages" id="message">{{ message }}</p>
-            </div>
-        {% endfor %}
-    {% endif %}
-{% endwith %}
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div class="alert alert-success text-center" role="alert">
+  <p class="center-align messages" id="message">{{ message }}</p>
+</div>
+{% endfor %} {% endif %} {% endwith %}
 <section class="container hero-image d-flex align-items-center">
   <div class="row">
     <div class="col-sm-12">
@@ -21,23 +18,23 @@
 <!-- icon block -->
 <section class="icon-block">
   <div class="container pt-5 pb-5">
-      <div class="row">
-        <div class="col-sm-12 col-md-4">
-          <span class="home-icons"><i class="fas fa-search-plus"></i></span>
-            <h4 class="extra-info">View pre-built personas</h4>
-            <button class="btn btn-outline-secondary">View personas</button>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <span class="home-icons"><i class="fas fa-user-plus"></i></span>
-            <h4 class="extra-info">Sign up and create your own</h4>
-            <button class="btn btn-outline-secondary">Sign up</button>
-        </div>
-         <div class="col-sm-12 col-md-4">
-            <span class="home-icons"><i class="fas fa-graduation-cap"></i></span>
-            <h4 class="extra-info">Learn how to create a persona</h4>
-            <button class="btn btn-outline-secondary">Learn more</button>
-        </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <span class="home-icons"><i class="fas fa-search-plus"></i></span>
+        <h4 class="extra-info">View pre-built personas</h4>
+        <button class="btn btn-outline-secondary">View personas</button>
       </div>
+      <div class="col-sm-12 col-md-4">
+        <span class="home-icons"><i class="fas fa-user-plus"></i></span>
+        <h4 class="extra-info">Sign up and create your own</h4>
+        <button class="btn btn-outline-secondary">Sign up</button>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <span class="home-icons"><i class="fas fa-graduation-cap"></i></span>
+        <h4 class="extra-info">Learn how to create a persona</h4>
+        <button class="btn btn-outline-secondary">Learn more</button>
+      </div>
+    </div>
   </div>
 </section>
 
