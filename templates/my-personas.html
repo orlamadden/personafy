@@ -1,14 +1,23 @@
-{% extends 'base.html' %} {% block content %} {% if 'username' in session %}
-<h2>{{ session['username'] }}'s Personas</h2>
-{% endif %}
+{% extends 'base.html' %} {% block content %} 
 
-<div class="container">
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12">
+{% if 'username' in session %}
+<h2 class="text-center">{{ session['username'] }}'s Personas</h2>
+{% endif %}
+    </div></div></div>
+
+<div class="container mt-5">
   <div class="row">
     {% for persona in personas %} {% if persona.creator == session['username']
     %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
       <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="image-wrap">
+            <div class="card-image" style="background-image: url({{persona.profile}})">
+            </div>
+        </div>
         <div class="card-body">
           <h5 class="card-title">{{persona.name}}</h5>
           <p class="card-text">
