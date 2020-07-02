@@ -13,30 +13,31 @@
     <div class="col-6">
       <form method="POST" action="{{ url_for('add_persona') }}">
         <div class="form-group">
-          <label for="fname">Full name</label>
+          <label for="fname">Full name *</label>
           <input
             type="text"
             class="form-control"
             id="fname"
             name="fname"
-            placeholder="Full name"
+            placeholder="Full name" required
           />
         </div>
         <div class="form-group">
-          <label for="age">Age</label>
-          <input class="form-control" type="number" id="age" name="age" min="1" max="99" />
+          <label for="age">Age *</label>
+          <input class="form-control" type="number" id="age" name="age" min="1" max="99" required />
         </div>
         <div class="form-group">
-          <label for="goals">Bio</label>
+          <label for="goals">Bio *</label>
           <textarea
             class="form-control"
             name="bio"
             id="bio"
             rows="3"
-          ></textarea>
+          required></textarea>
         </div>
         <div class="form-group">
-          <label for="basic-url">Persona profile</label>
+          <label for="basic-url">Persona profile (optional)</label>
+          <small>We recommend using an image from Pexels or Unsplash</small>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="profile-image"
@@ -53,31 +54,31 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="occupation">Select Occupation</label>
-          <select class="form-control" id="occupation" name="occupation">
-            <option selected>Please select...</option>
+          <label for="occupation">Select Occupation *</label>
+          <select class="form-control" id="occupation" name="occupation" required>
+            <option selected disabled>Please select...</option>
             {% for job in occupation %}
             <option>{{ job.occupation_title }}</option>
             {% endfor %}
           </select>
         </div>
         <div class="form-group">
-          <label for="industry">Select Industry</label>
-          <select class="form-control" id="industry" name="industry">
-            <option selected>Please select...</option>
+          <label for="industry">Select Industry *</label>
+          <select class="form-control" id="industry" name="industry" required>
+            <option selected disabled>Please select...</option>
             {% for sector in industry %}
             <option>{{ sector.industry_title }}</option>
             {% endfor %}
           </select>
         </div>
         <div class="form-group">
-          <label for="goals">Goals</label>
+          <label for="goals">Goals *</label>
           <textarea
             class="form-control mb-3"
             name="goals"
             id="goals"
             rows="2"
-          ></textarea>
+          required></textarea>
           <button type="button" class="btn btn-primary">
             <i class="fas fa-plus"></i><span>Add line</span>
           </button>
@@ -86,13 +87,13 @@
           </button>
         </div>
         <div class="form-group">
-          <label for="frustrations">Frustrations</label>
+          <label for="frustrations">Frustrations *</label>
           <textarea
             class="form-control mb-3"
             id="frustrations"
             name="frustrations"
             rows="2"
-          ></textarea>
+          required></textarea>
           <button type="button" class="btn btn-primary">
             <i class="fas fa-plus"></i><span>Add line</span>
           </button>
