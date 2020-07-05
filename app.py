@@ -86,6 +86,8 @@ def update_persona(persona_id):
 def delete_persona(persona_id):
     persona = db.persona
     persona.remove({'_id': ObjectId(persona_id)})
+    flash("Your persona has successfully been deleted.")
+    
     return redirect(url_for('public_personas'))
 
 @app.route('/register', methods=['GET', 'POST'])
