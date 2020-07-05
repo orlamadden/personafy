@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %} {% with messages =
 get_flashed_messages() %} {% if messages %} {% for message in messages %}
-<div class="alert alert-success" role="alert">
-  <p class="center-align messages" id="message">{{ message }}</p>
+<div class="alert alert-warning" role="alert">
+  <p class="center-align messages text-center" id="message">{{ message }}</p>
 </div>
 {% endfor %} {% endif %} {% endwith %}
 
