@@ -112,6 +112,12 @@ def register():
             session['username'] = new_username
             flash(f'Welcome {new_username}', 'success')
             return redirect(url_for('index', username=session["username"]))
+
+        else:
+            flash(f'Uh oh, that username already exists. Please try another username.', 'warning')
+            return redirect(url_for('register'))
+
+
         
     return render_template('register.html')
 
