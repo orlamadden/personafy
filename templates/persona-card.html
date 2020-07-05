@@ -20,6 +20,10 @@
       <h6>Industry: {{persona.industry_title}}</h6>
       <p>{{persona.age}}</p>
       <a href="#" id="print-btn" class="btn btn-primary">Print</a>
+      {% if persona.creator == session['username']
+    %}
+      <a href="#" class="btn btn-primary">Edit</a>
+      {% endif %}
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
       <h6>About {{ persona.name }}</h6>
