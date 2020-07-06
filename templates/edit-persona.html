@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12">
 <h1 class="text-center">Edit Persona</h1>
+</div></div></div>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6">
@@ -31,10 +34,10 @@
           <textarea
             class="form-control"
             name="bio"
+            type="text"
             id="bio"
             rows="3"
-            value="{{ persona.bio }}"
-          ></textarea>
+          >{{ persona.bio }}</textarea>
         </div>
         <div class="form-group">
           <label for="occupation">Select Occupation *</label>
@@ -68,24 +71,52 @@
         <div class="form-group">
           <label for="goals">Goals *</label>
           <textarea
-            class="form-control"
+            class="form-control mb-3"
             name="goals"
             id="goals"
             rows="2"
-          ></textarea>
-          <button type="button" class="btn btn-primary">Add</button>
-          <button type="button" class="btn btn-primary">Remove</button>
+            required
+          >{{ persona.goals }}</textarea>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-plus"></i><span>Add line</span>
+          </button>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-minus"></i><span>Remove line</span>
+          </button>
         </div>
         <div class="form-group">
           <label for="frustrations">Frustrations *</label>
           <textarea
-            class="form-control"
+            class="form-control mb-3"
             id="frustrations"
             name="frustrations"
             rows="2"
-          ></textarea>
-          <button type="button" class="btn btn-primary">Add</button>
-          <button type="button" class="btn btn-primary">Remove</button>
+            required
+          >{{ persona.frustrations }}</textarea>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-plus"></i><span>Add line</span>
+          </button>
+          <button type="button" class="btn btn-primary">
+            <i class="fas fa-minus"></i><span>Remove line</span>
+          </button>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="make_public"
+              name="make_public"
+            />
+            <label
+              class="form-check-label"
+              for="make_public"
+              name="make_public"
+              id="make_public"
+            >
+              Make persona publicly available
+            </label>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Update Persona</button>
