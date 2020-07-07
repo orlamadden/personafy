@@ -10,7 +10,6 @@ Personafy is an online tool for creating custom user personas in minutes. Users 
 - As a user I want to have a search box so I can search for personas related to my business area(s).
 - As a user I want to view pre-made personas for inspiration.
 - As a user, I want to be able to print a persona so I can bring it to my team meeting.
-- As a user, I want to have a message form so I can contact the site owner.
 - As a user, I want to read about user personas and best practice, tips and tricks for using a user person in my projects.
 
 - As a user-contributor, I want to be able to create my own profile.
@@ -25,12 +24,37 @@ Personafy is an online tool for creating custom user personas in minutes. Users 
 
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+
+#### Register
+
+Visitors to the website can sign up to the website and have an account. Users need to fill out a basic form which requires entering a username and password. Username and password are stored in the users collection in the database.
+
+#### Log in 
+
+If users register to the website, they have the ability to log in using the same simple form containing their username and password. This gives registered users the possibility to add personas, edit them and delete them. 
+
+#### Log out
+
+Users can log out from their session on the website.
+
+#### Add a user persona
+
+When users are logged in, they can create or 'add' a user persona using a form. Details required for the user persona are 'name', 'age', 'bio', 'occupation', 'industry', 'goals' and 'frustrations'. Using an image with the user persona is optional, a randomly generated image will be used in this case.
+
+#### View user personas
+
+Read or 'view' user personas, either from the public personas page, or the my perosnas page when the user is logged in. Users can also view an individual user persona. From there, users can print personas, or if a user is logged in, they can also edit their own persona from this screen.
+
+#### Edit a user persona
+
+Logged in users can edit or modify their user personas and update the database with the user personas updated information. The edit form is similar to the 'create' user persona form.
+
+#### Delete a user persona
+
+Logged in users can delete any user persona that they have made. Before a user persona is deleted, a pop up modal displays asking the user if they are sure they want to delete it.
+
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
