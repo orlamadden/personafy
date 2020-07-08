@@ -18,6 +18,9 @@ mongo = PyMongo(app)
 
 db = mongo.db
 
+def get_persona(persona_id):
+    return db.persona.find_one({"_id": ObjectId(persona_id)})
+
 def registered_user(username):
     user = db.user
     return user.find_one({"name": username})
@@ -29,31 +32,55 @@ def index():
 
 @app.route('/public-personas')
 def public_personas():
+    personas = db.persona.find()
+    
+    occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
+
+    industry = [ind for ind in mongo.db.industry.find({}, {"industry_title": 1})]
+
     return render_template('public-personas.html',
-    personas=mongo.db.persona.find())
+    personas=personas, occupation=occupation, industry=industry)
 
 @app.route('/view-persona/<persona_id>')
 def view_persona(persona_id):
     the_persona = db.persona.find_one({"_id": ObjectId(persona_id)})
-    return render_template('persona-card.html',
-    persona=the_persona)
+    
+    occupation_name = db.occupation.find_one({"_id": ObjectId(the_persona.get("occupation_title"))})
+    
+    industry_name = db.industry.find_one({"_id": ObjectId(the_persona.get("industry_title"))})
 
-@app.route('/add-persona', methods=['GET','POST'])
+    return render_template('persona-card.html',
+    persona=the_persona, persona_industry=industry_name, persona_occupation=occupation_name)
+
+@app.route('/add-persona')
 def add_persona():
+    db_occupation = db.occupation.find()
+    db_industry = db.industry.find()
+
+    return render_template('add-persona.html', occupation=db_occupation, industry=db_industry)
+
+@app.route('/insert-persona', methods=['GET', 'POST'])
+def insert_persona():
     persona = db.persona
-    occupation = db.occupation.find()
-    industry = db.industry.find()
+
+    industry_title = request.form.get('industry')
+    industry_id = db.industry.find_one({"industry_title": industry_title})["_id"]
+    
+    occupation_title = request.form.get('occupation')
+    occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
+
+    
     if request.method == 'POST':
         persona.insert_one({
             'name': request.form.get('fname'),
             'age': request.form.get('age'),
             'bio': request.form.get('bio'),
             'profile': request.form.get('profile'),
-            'occupation_title': request.form.get('occupation'),
-            'industry_title': request.form.get('industry'),
+            'occupation_title': occupation_id,
+            'industry_title': industry_id,
             'goals': request.form.get('goals'),
             'frustrations': request.form.get('frustrations'),
-            'creator': session['username']
+            'creator': session['username'],
         })
     
         return redirect(url_for('public_personas'))
@@ -62,22 +89,35 @@ def add_persona():
 @app.route('/edit_persona/<persona_id>')
 def edit_persona(persona_id):
     the_persona = db.persona.find_one({'_id': ObjectId(persona_id)})
-    all_occupation = db.occupation.find()
-    all_industry = db.industry.find()
-    return render_template('edit-persona.html', persona=the_persona, occupation=all_occupation, industry=all_industry)
+    
+    occupation_name = db.occupation.find_one({"_id": ObjectId(the_persona.get("occupation_title"))})
+    
+    industry_name = db.industry.find_one({"_id": ObjectId(the_persona.get("industry_title"))})
+    
+    return render_template('edit-persona.html', persona=the_persona, occupation=mongo.db.occupation.find(), industry=mongo.db.industry.find(), occupation_title=occupation_name, industry_title=industry_name)
 
 @app.route('/update_persona/<persona_id>', methods=['GET', 'POST'])
 def update_persona(persona_id):
     persona = db.persona
-    persona.update({'_id': ObjectId(persona_id)},
+
+    industry_title = request.form.get('industry')
+    industry_id = db.industry.find_one({"industry_title": industry_title})["_id"]
+    
+    occupation_title = request.form.get('occupation')
+    occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
+
+    persona.update_one({'_id': ObjectId(persona_id)},
     {
         'name': request.form.get('fname'),
         'age': request.form.get('age'),
         'bio': request.form.get('bio'),
-        'occupation_title': request.form.get('occupation'),
-        'industry_title': request.form.get('industry'),
+        'profile': request.form.get('profile'),
+        'occupation_title': occupation_id,
+        'industry_title': industry_id,
         'goals': request.form.get('goals'),
-        'frustrations': request.form.get('frustrations')
+        'frustrations': request.form.get('frustrations'),
+        'creator': session['username'],
+
     })
     
     return redirect(url_for('public_personas'))
@@ -155,8 +195,14 @@ def logout():
 
 @app.route('/my_personas')
 def my_personas():
+    personas = db.persona.find()
+    
+    occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
+
+    industry = [ind for ind in mongo.db.industry.find({}, {"industry_title": 1})]
+
     return render_template('my-personas.html',
-    personas=mongo.db.persona.find())
+    personas=personas, occupation=occupation, industry=industry)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

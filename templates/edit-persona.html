@@ -40,13 +40,32 @@
           >{{ persona.bio }}</textarea>
         </div>
         <div class="form-group">
+          <label for="basic-url">Persona profile (optional)</label>
+          <small>We recommend using an image from Pexels or Unsplash</small>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="profile-image"
+                >https://example.com/</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              name="profile"
+              value="{{ persona.profile }}"
+              id="basic-url"
+              aria-describedby="basic-addon3"
+            />
+          </div>
+        </div>
+        <div class="form-group">
           <label for="occupation">Select Occupation *</label>
           <select class="form-control" id="occupation" name="occupation">
             <option selected>Please select...</option>
-            {% for job in occupation %} {% if job.occupation_title ==
-            persona.occupation_title %}
-            <option value="{{ job.occupation_title }}" selected
-              >{{ job.occupation_title }}</option
+            {% for job in occupation %} 
+            {% if job.occupation_title == occupation_title %}
+            <option value="{{ occupation_title }}" selected
+              >{{ occupation_title }}</option
             >
             {% else %}
             <option value="{{ job.occupation_title }}"
@@ -57,11 +76,11 @@
         </div>
         <div class="form-group">
           <label for="sector">Select Industry *</label>
-          <select class="form-control" id="sector" name="sector">
+          <select class="form-control" id="sector" name="industry">
             <option selected>Please select...</option>
             {% for sector in industry %} 
-                {% if sector.industry_title == persona.industry_title %}
-                    <option value="{{ sector.industry_title }}" selected >{{ sector.industry_title }}</option>
+                {% if sector.industry_title == industry_title %}
+                    <option value="{{ industry_title }}" selected >{{ industry_title }}</option>
             {% else %}
             <option value="{{ sector.industry_title }}">{{ sector.industry_title }}</option>
             {% endif %} 
@@ -100,25 +119,6 @@
             <i class="fas fa-minus"></i><span>Remove line</span>
           </button>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="make_public"
-              name="make_public"
-            />
-            <label
-              class="form-check-label"
-              for="make_public"
-              name="make_public"
-              id="make_public"
-            >
-              Make persona publicly available
-            </label>
-          </div>
-        </div>
-
         <button type="submit" class="btn btn-primary">Update Persona</button>
       </form>
     </div>

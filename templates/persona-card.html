@@ -16,8 +16,8 @@
         style="background-image: url({{persona.profile}})"
       ></div>
       <h5 class="mt-3">{{persona.name}}</h5>
-      <h6>Occupation: {{persona.occupation_title}}</h6>
-      <h6>Industry: {{persona.industry_title}}</h6>
+      <h6>Occupation: {{persona_occupation.occupation_title}}</h6>
+      <h6>Industry: {{persona_industry.industry_title}}</h6>
       <p>{{persona.age}}</p>
       <a href="#" id="print-btn" class="btn btn-primary">Print</a>
       {% if persona.creator == session['username']

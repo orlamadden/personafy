@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div class="alert alert-success text-center" role="alert">
+  <p class="center-align messages" id="message">{{ message }}</p>
+</div>
+{% endfor %} {% endif %} {% endwith %}
 <div class="container mt-5">
   <div class="row">
   <div class="col-sm-12">
@@ -21,8 +26,19 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">{{persona.name}} - {{persona.age}}</h5>
-          <p class="card-text">
-            {{persona.industry_title}}
+          <h6 class="card-text job-title">
+          {% for occ in occupation %}
+             {% if persona.occupation_title == occ["_id"] %}
+            {{occ['occupation_title']}}
+            {% endif %}
+            {% endfor %}
+          </h6>
+          <p class="card-text industry-title">
+           {% for ind in industry %}
+             {% if persona.industry_title == ind["_id"] %}
+            {{ind['industry_title']}} industry
+            {% endif %}
+            {% endfor %}
           </p>
           <a
             href="{{ url_for('view_persona', persona_id=persona._id)}}"
@@ -32,7 +48,7 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+{% endfor %}
   </div>
 </div>
 

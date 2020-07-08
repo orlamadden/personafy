@@ -11,7 +11,7 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-6">
-      <form method="POST" action="{{ url_for('add_persona') }}">
+      <form method="POST" action="{{ url_for('insert_persona') }}">
         <div class="form-group">
           <label for="fname">Full name *</label>
           <input
@@ -118,24 +118,7 @@
             <i class="fas fa-minus"></i><span>Remove line</span>
           </button>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="make_public"
-              name="make_public"
-            />
-            <label
-              class="form-check-label"
-              for="make_public"
-              name="make_public"
-              id="make_public"
-            >
-              Make persona publicly available
-            </label>
-          </div>
-        </div>
+
         <button type="submit" class="btn btn-primary mt-3">
           Create Persona
         </button>
