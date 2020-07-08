@@ -106,7 +106,7 @@ def update_persona(persona_id):
     occupation_title = request.form.get('occupation')
     occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
 
-    persona.update_one({'_id': ObjectId(persona_id)},
+    persona.update({'_id': ObjectId(persona_id)},
     {
         'name': request.form.get('fname'),
         'age': request.form.get('age'),
