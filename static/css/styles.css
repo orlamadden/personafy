@@ -61,6 +61,16 @@ nav a {
   display: block;
 }
 
+/* public cards page */
+
+.job-title {
+    font-size: 1.4em;
+}
+
+.industry-title {
+    font-style: italic;
+}
+
 /* persona card */
 
 .persona-full {
