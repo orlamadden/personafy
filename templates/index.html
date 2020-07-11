@@ -8,10 +8,31 @@ messages %}
 {% endfor %} {% endif %} {% endwith %}
 <section class="container hero-image d-flex align-items-center">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 col-md-12 col-lg-6 align-self-center">
       <h1>Welcome to Personafy</h1>
-      <p>Create custom user personas in minutes</p>
-      <a class="btn btn-primary" href="{{url_for('public_personas')}}" role="button">Explore personas</a>
+      <p>Create custom user personas in minutes.</p>
+      <a
+        class="btn btn-primary"
+        href="{{url_for('public_personas')}}"
+        role="button"
+        >Explore personas</a
+      >
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6">
+    <img src="{{url_for('static', filename='img/hero-image.png') }}" height="500" class="img-fluid" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- website information block -->
+<section class="container site-info text-center pt-5 pb-5">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>What is Personafy?</h2>
+      <p class="mt-3">
+        Personafy is a community driven website where users can create user
+        personas for personal and professional use in your next website project. Browse pre-built user personas for inspiration or create your own and add to the expanding user persona collection.
+      </p>
     </div>
   </div>
 </section>
@@ -21,18 +42,18 @@ messages %}
     <div class="row">
       <div class="col-sm-12 col-md-4">
         <span class="home-icons"><i class="fas fa-search-plus"></i></span>
-        <h4 class="extra-info">View pre-built personas</h4>
-        <button class="btn btn-outline-secondary">View personas</button>
+        <h4 class="extra-info">View pre-built user personas</h4>
+        <button class="btn btn-light">View personas</button>
       </div>
       <div class="col-sm-12 col-md-4">
         <span class="home-icons"><i class="fas fa-user-plus"></i></span>
         <h4 class="extra-info">Sign up and create your own</h4>
-        <button class="btn btn-outline-secondary">Sign up</button>
+        <button class="btn btn-light">Sign up</button>
       </div>
       <div class="col-sm-12 col-md-4">
         <span class="home-icons"><i class="fas fa-graduation-cap"></i></span>
-        <h4 class="extra-info">Learn how to create a persona</h4>
-        <button class="btn btn-outline-secondary">Learn more</button>
+        <h4 class="extra-info">Learn how to create a user persona</h4>
+        <button class="btn btn-light">Learn more</button>
       </div>
     </div>
   </div>
