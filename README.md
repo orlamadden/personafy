@@ -85,7 +85,11 @@ This project utilises the NoSQL database MongoDB to store data. The reason for t
 
 ### Database Schema
 
-This project's database contains 3 main collections to store data.
+This project's database contains 4 main collections to store data.
+- Personas - stores data about user personas created by registered users
+- Industry - stores data about industries
+- Occupation - stores data about occupations
+- Users - stores username and hashed passwords from registered users
 
 ### Data Storage Types
 
