@@ -23,6 +23,7 @@ def get_persona(persona_id):
     return db.persona.find_one({"_id": ObjectId(persona_id)})
 
 def registered_user(username):
+    # function to find a registered username from the database
     user = db.user
     return user.find_one({"name": username})
 
@@ -33,6 +34,12 @@ def index():
 
 @app.route('/public-personas')
 def public_personas():
+    """
+    Reads all user personas from the database.
+
+    View list of public user personas that have been created by
+    registered users to Personafy.
+    """
     personas = db.persona.find()
     
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
@@ -44,6 +51,12 @@ def public_personas():
 
 @app.route('/view-persona/<persona_id>')
 def view_persona(persona_id):
+    """
+    Read a single user persona from the database.
+
+    View a single user persona that has been created by
+    a registered user.
+    """
     the_persona = db.persona.find_one({"_id": ObjectId(persona_id)})
     
     occupation_name = db.occupation.find_one({"_id": ObjectId(the_persona.get("occupation_title"))})
@@ -55,6 +68,7 @@ def view_persona(persona_id):
 
 @app.route('/add-persona')
 def add_persona():
+    # add persona view
     db_occupation = db.occupation.find()
     db_industry = db.industry.find()
 
@@ -62,6 +76,12 @@ def add_persona():
 
 @app.route('/insert-persona', methods=['GET', 'POST'])
 def insert_persona():
+    """
+    Create a user persona.
+    
+    Inserts all information from the form on the
+    'Add Persona' page into the database.
+    """
     persona = db.persona
 
     industry_title = request.form.get('industry')
@@ -133,6 +153,12 @@ def delete_persona(persona_id):
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """
+    Register a user.
+    
+    Checks the database if a username already exists, creates
+    the user if the username does not exist already.
+    """
     user = db.user
     if request.method == 'POST':
         new_username = request.form.get('username').lower()
@@ -159,43 +185,62 @@ def register():
         else:
             flash(f'Uh oh, that username already exists. Please try another username.', 'warning')
             return redirect(url_for('register'))
-
-
-        
+      
     return render_template('register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    User Login. If Username not found in MongoDB db 'users', flash message
+    and redirect user to try again on Login page. If password entered
+    incorrect, flash relevant message and redirect to Login.
+    """
     if request.method == 'POST':
         username = request.form.get('reg_username')
         password = request.form.get('user_password')
         reg_user = registered_user(username)
-
+        
+        # checks if username is registered is true
         if reg_user:
+            """
+            If registered user is true, check for hashed password
+            against the registered username and flash welcome back 
+            message when user successfully logs in.
+            """
             if check_password_hash(reg_user["password"], password):
                 flash(f"Welcome back {username}", "success")
                 session['username'] = username
                 return redirect(url_for('index', username=session["username"]))
                 
             else:
-                # Login validation
-                flash(f"There was a problem logging in. Check your username and password or create an account.")
+                # Flash message on incorrect user login
+                flash("There was a problem logging in. Check your username and password combination and please try again.")
                 return redirect(url_for('login'))
         
         else:
-            flash(f"The username {username} does not exist.")
+            # Flash message when username does not exist
+            flash(f"The username {username} does not exist. Please create an account.")
             return redirect(url_for('login'))
 
     return render_template('login.html')
 
 @app.route('/logout')
 def logout():
+    """
+    Logs out the user by clearing the session cache and redirects 
+    user with flash message to index.
+    """
     session.clear()
-    flash('You have been logged out')
+    flash('You have been logged out. Thank you!')
     return redirect(url_for('index'))
 
 @app.route('/my_personas')
 def my_personas():
+    """
+    Registered user's personas.
+    
+    A list of all the personas created by a particular user.
+    """
     personas = db.persona.find()
     
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
