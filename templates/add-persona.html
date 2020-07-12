@@ -1,130 +1,130 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1 class="text-center">Create a Persona</h1>
+<section>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="">Create a User Persona</h1>
+      </div>
     </div>
+    <div class="row mt-3">
+          <div class="col-sm-12 text-center">
+            <p>You now have the ability to create your own user personas and contribute to the public database of user personas on Personafy.</p>
+            <p>Fill out the form fields below with the required information to create your user persona. When you have completed all the fields, click submit and your user persona will be added to the public database.</p>
+          </div>
+        </div>
   </div>
-</div>
+</section>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <form method="POST" action="{{ url_for('insert_persona') }}">
-        <div class="form-group">
-          <label for="fname">Full name *</label>
-          <input
-            type="text"
-            class="form-control"
-            id="fname"
-            name="fname"
-            placeholder="Full name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="age">Age *</label>
-          <input
-            class="form-control"
-            type="number"
-            id="age"
-            name="age"
-            min="1"
-            max="99"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="goals">Bio *</label>
-          <textarea
-            class="form-control"
-            name="bio"
-            id="bio"
-            rows="3"
-            required
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="basic-url">Persona profile (optional)</label>
-          <small>We recommend using an image from Pexels or Unsplash</small>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="profile-image"
-                >https://example.com/</span
-              >
-            </div>
+<section>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <form method="POST" action="{{ url_for('insert_persona') }}">
+          <div class="form-group">
+            <label for="fname">User Persona Name *</label>
             <input
               type="text"
               class="form-control"
-              name="profile"
-              id="basic-url"
-              aria-describedby="basic-addon3"
+              id="fname"
+              name="fname"
+              placeholder="Full name"
+              required
             />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="occupation">Select Occupation *</label>
-          <select
-            class="form-control"
-            id="occupation"
-            name="occupation"
-            required
-          >
-            <option selected disabled>Please select...</option>
-            {% for job in occupation %}
-            <option>{{ job.occupation_title }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="industry">Select Industry *</label>
-          <select class="form-control" id="industry" name="industry" required>
-            <option selected disabled>Please select...</option>
-            {% for sector in industry %}
-            <option>{{ sector.industry_title }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="goals">Goals *</label>
-          <textarea
-            class="form-control mb-3"
-            name="goals"
-            id="goals"
-            rows="2"
-            required
-          ></textarea>
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-plus"></i><span>Add line</span>
-          </button>
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-minus"></i><span>Remove line</span>
-          </button>
-        </div>
-        <div class="form-group">
-          <label for="frustrations">Frustrations *</label>
-          <textarea
-            class="form-control mb-3"
-            id="frustrations"
-            name="frustrations"
-            rows="2"
-            required
-          ></textarea>
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-plus"></i><span>Add line</span>
-          </button>
-          <button type="button" class="btn btn-primary">
-            <i class="fas fa-minus"></i><span>Remove line</span>
-          </button>
-        </div>
+          <div class="form-group">
+            <label for="age">User Persona Age *</label>
+            <input
+              class="form-control"
+              type="number"
+              id="age"
+              name="age"
+              min="1"
+              max="99"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="goals">User Persona Bio *</label>
+            <textarea
+              class="form-control"
+              name="bio"
+              id="bio"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="basic-url">User Persona Profile Image (optional)</label>
+            <small>We recommend using an image from Pexels or Unsplash</small>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="profile-image"
+                  >https://example.com/</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="profile"
+                id="basic-url"
+                aria-describedby="basic-addon3"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="occupation">User Persona Occupation *</label>
+            <select
+              class="form-control"
+              id="occupation"
+              name="occupation"
+              required
+            >
+              <option selected disabled>Please select...</option>
+              {% for job in occupation %}
+              <option>{{ job.occupation_title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="industry">User Persona Industry *</label>
+            <select class="form-control" id="industry" name="industry" required>
+              <option selected disabled>Please select...</option>
+              {% for sector in industry %}
+              <option>{{ sector.industry_title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-group new-goal goal">
+            <div class="input-row">
+              <label for="goals">User Persona Goals *</label>
+              <textarea
+                class="form-control mb-3"
+                name="goals"
+                id="goals"
+                rows="2"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="frustrations">User Persona Frustrations *</label>
+            <textarea
+              class="form-control mb-3"
+              id="frustrations"
+              name="frustrations"
+              rows="2"
+              required
+            ></textarea>
+          </div>
 
-        <button type="submit" class="btn btn-primary mt-3">
-          Create Persona
-        </button>
-      </form>
+          <button type="submit" class="btn btn-primary mt-3">
+            Create Persona
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 {% endblock content %}
