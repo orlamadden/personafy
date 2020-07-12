@@ -5,47 +5,58 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
 </div>
 {% endfor %} {% endif %} {% endwith %}
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1 class="text-center">Login</h1>
+<section>
+  <div class="container mt-5 pb-5 pt-5">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="">Login</h1>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-12 text-center">
+        <p>
+          Log in to your Personafy account.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <form method="POST" action="{{url_for('login')}}">
-        <div class="form-group">
-          <label for="reg_username">Username</label>
-          <input
-            type="username"
-            class="form-control"
-            id="reg_username"
-            name="reg_username"
-            aria-describedby="usernameHelp"
-            placeholder="Enter username"
-          />
-        </div>
-        <div class="form-group">
-          <label for="user_password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="user_password"
-            name="user_password"
-            placeholder="Password"
-          />
-        </div>
-        <small id="emailHelp" class="form-text text-muted"
-          >Don't have an account?
-          <a href="{{ url_for('register') }}">Sign up.</a></small
-        >
-        <button type="submit" class="btn btn-primary mt-3">Login</button>
-      </form>
+<section>
+  <div class="container mt-2 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <form method="POST" action="{{url_for('login')}}">
+          <div class="form-group">
+            <label for="reg_username">Username</label>
+            <input
+              type="username"
+              class="form-control"
+              id="reg_username"
+              name="reg_username"
+              aria-describedby="usernameHelp"
+              placeholder="Enter username"
+            />
+          </div>
+          <div class="form-group">
+            <label for="user_password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="user_password"
+              name="user_password"
+              placeholder="Password"
+            />
+          </div>
+          <small id="emailHelp" class="form-text text-muted"
+            >Don't have an account?
+            <a href="{{ url_for('register') }}">Sign up.</a></small
+          >
+          <button type="submit" class="btn btn-primary mt-3">Login</button>
+        </form>
+      </div>
     </div>
   </div>
+</section>
 
-  {% endblock content %}
-</div>
+{% endblock content %}
