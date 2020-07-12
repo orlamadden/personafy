@@ -1,21 +1,23 @@
 # Personafy
 
 Personafy is an online tool for creating custom user personas in minutes. Users have the ability to search for pre-built templates, or sign up to create their own personas based on their own personal / business needs.
+
+Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete users personas using Personafy.
  
 ## UX
 
 #### User Stories
  
 - As a user I want to view the site from any device (mobile, tablet and desktop).
-- As a user I want to have a search box so I can search for personas related to my business area(s).
+- As a user I want to have a search box so I can search for personas related to my business area(s). - edit/delete
 - As a user I want to view pre-made personas for inspiration.
 - As a user, I want to be able to print a persona so I can bring it to my team meeting.
 - As a user, I want to read about user personas and best practice, tips and tricks for using a user person in my projects.
 
 - As a user-contributor, I want to be able to create my own profile.
 - As a user-contributor, I want to be able to create my own personas.
-- As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.
-- As a user-contributor, I want to be able to make some of my personas public.
+- As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace. -delete
+- As a user-contributor, I want to be able to make some of my personas public. - delete
 - As a user-contributor, I want to be able to edit/modify an existing persona. 
 - As a user-contributor, I want to be able to delete an existing persona.
 - As a user-contributor, I want to have a confirmation/warning before deleting an entry.
@@ -62,10 +64,18 @@ Personafy is an online tool for creating custom user personas in minutes. Users 
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+The languages, frameworks and other tools used for this project:
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+- HTML - page structure and content
+- CSS - custom styling
+- JQuery - for print functionality
+- Python3 - backend processing and application logic
+- Bootstrap framework - used as the core structuring layout for the application which ensures mobile-first design
+- Git - used for version control
+- Github - used for remote version control storage
+- Flask framework - template language written in Python, contains Jinja2 and Werkzeug
+- Heroku - used to host the app
+- MongoDB Atlas - used to store the project's database information
 
 ## Information Architecture
 
@@ -129,6 +139,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - Register and user login was adapted from this [repo](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py)
 - Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.)
 - Dropdown on hover from this [Stack Overflow post](https://stackoverflow.com/questions/42183672/how-to-implement-a-navbar-dropdown-hover-in-bootstrap-v4)
+- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session)
 
 ### Media
 - The photos used in this site were obtained from ...
