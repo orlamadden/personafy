@@ -1,117 +1,146 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-12">
-<h1 class="text-center">Edit Persona</h1>
-</div></div></div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <form method="POST" action="{{ url_for('update_persona', persona_id=persona._id) }}">
-        <div class="form-group">
-          <label for="fname">Full name *</label>
-          <input
-            type="text"
-            class="form-control"
-            id="fname"
-            name="fname"
-            placeholder="Full name"
-            value="{{ persona.name }}"
-          />
-        </div>
-        <div class="form-group">
-          <label for="age">Age *</label>
-          <input
-            class="form-control"
-            type="number"
-            id="age"
-            name="age"
-            value="{{ persona.age }}"
-          />
-        </div>
-        <div class="form-group">
-          <label for="goals">Bio *</label>
-          <textarea
-            class="form-control"
-            name="bio"
-            type="text"
-            id="bio"
-            rows="3"
-          >{{ persona.bio }}</textarea>
-        </div>
-        <div class="form-group">
-          <label for="basic-url">Persona profile (optional)</label>
-          <small>We recommend using an image from Pexels or Unsplash</small>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="profile-image"
-                >https://example.com/</span
-              >
-            </div>
+<section>
+  <div class="container mt-5 pb-5 pt-5">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1 class="">Edit User Persona</h1>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-12 text-center">
+        <p>
+          Edit the selected user persona using the form below.
+        </p>
+        <p>
+          When you have completed editing your user persona, click the 'Update
+          Persona' button.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-6">
+        <form
+          method="POST"
+          action="{{ url_for('update_persona', persona_id=persona._id) }}"
+        >
+          <div class="form-group">
+            <label for="fname">User Persona Name *</label>
             <input
               type="text"
               class="form-control"
-              name="profile"
-              value="{{ persona.profile }}"
-              id="basic-url"
-              aria-describedby="basic-addon3"
+              id="fname"
+              name="fname"
+              placeholder="Full name"
+              value="{{ persona.name }}"
             />
           </div>
-        </div>
-        <div class="form-group">
-          <label for="occupation">Select Occupation *</label>
-          <select class="form-control" id="occupation" name="occupation">
-            <option selected>Please select...</option>
-            {% for job in occupation %} 
-            {% if persona.occupation_title == job['_id'] %}
-            <option value="{{ job['occupation_title'] }}" selected
-              >{{ job['occupation_title'] }}</option
+          <div class="form-group">
+            <label for="age">User Persona Age *</label>
+            <input
+              class="form-control"
+              type="number"
+              id="age"
+              name="age"
+              value="{{ persona.age }}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="goals">User Persona Bio *</label>
+            <textarea
+              class="form-control"
+              name="bio"
+              type="text"
+              id="bio"
+              rows="3"
             >
-            {% else %}
-            <option value="{{ job.occupation_title }}"
-              >{{ job.occupation_title }}</option
+{{ persona.bio }}</textarea
             >
-            {% endif %} {% endfor %}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="sector">Select Industry *</label>
-          <select class="form-control" id="sector" name="industry">
-            <option selected>Please select...</option>
-            {% for sector in industry %} 
-                {% if persona.industry_title == sector['_id'] %}
-                    <option value="{{ sector['industry_title'] }}" selected >{{ sector['industry_title'] }}</option>
-            {% else %}
-            <option value="{{ sector.industry_title }}">{{ sector.industry_title }}</option>
-            {% endif %} 
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="goals">Goals *</label>
-          <textarea
-            class="form-control mb-3"
-            name="goals"
-            id="goals"
-            rows="2"
-            required
-          >{{ persona.goals }}</textarea>
-
-        </div>
-        <div class="form-group">
-          <label for="frustrations">Frustrations *</label>
-          <textarea
-            class="form-control mb-3"
-            id="frustrations"
-            name="frustrations"
-            rows="2"
-            required
-          >{{ persona.frustrations }}</textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Update Persona</button>
-      </form>
+          </div>
+          <div class="form-group">
+            <label for="basic-url">User Persona Profile Image (optional)</label>
+            <small>We recommend using an image from Pexels or Unsplash</small>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="profile-image"
+                  >https://example.com/</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="profile"
+                value="{{ persona.profile }}"
+                id="basic-url"
+                aria-describedby="basic-addon3"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="occupation">User Persona Occupation *</label>
+            <select class="form-control" id="occupation" name="occupation">
+              <option selected>Please select...</option>
+              {% for job in occupation %} {% if persona.occupation_title ==
+              job['_id'] %}
+              <option value="{{ job['occupation_title'] }}" selected
+                >{{ job['occupation_title'] }}</option
+              >
+              {% else %}
+              <option value="{{ job.occupation_title }}"
+                >{{ job.occupation_title }}</option
+              >
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sector">User Persona Industry *</label>
+            <select class="form-control" id="sector" name="industry">
+              <option selected>Please select...</option>
+              {% for sector in industry %} {% if persona.industry_title ==
+              sector['_id'] %}
+              <option value="{{ sector['industry_title'] }}" selected
+                >{{ sector['industry_title'] }}</option
+              >
+              {% else %}
+              <option value="{{ sector.industry_title }}"
+                >{{ sector.industry_title }}</option
+              >
+              {% endif %} {% endfor %}
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="goals">User Persona Goals *</label>
+            <textarea
+              class="form-control mb-3"
+              name="goals"
+              id="goals"
+              rows="2"
+              required
+            >
+{{ persona.goals }}</textarea
+            >
+          </div>
+          <div class="form-group">
+            <label for="frustrations">User Persona Frustrations *</label>
+            <textarea
+              class="form-control mb-3"
+              id="frustrations"
+              name="frustrations"
+              rows="2"
+              required
+            >
+{{ persona.frustrations }}</textarea
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Update Persona</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 {% endblock content %}
