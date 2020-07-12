@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, url_for, request, redirect, session, flash
 from flask_pymongo import PyMongo
+from datetime import date
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -94,7 +95,7 @@ def edit_persona(persona_id):
     
     industry_name = db.industry.find_one({"_id": ObjectId(the_persona.get("industry_title"))})
     
-    return render_template('edit-persona.html', persona=the_persona, occupation=mongo.db.occupation.find(), industry=mongo.db.industry.find(), occupation_title=occupation_name, industry_title=industry_name)
+    return render_template('edit-persona.html', persona=the_persona, occupation=db.occupation.find(), industry=db.industry.find(), occupation_title=occupation_name, industry_title=industry_name)
 
 @app.route('/update_persona/<persona_id>', methods=['GET', 'POST'])
 def update_persona(persona_id):
@@ -178,11 +179,11 @@ def login():
                 
             else:
                 # Login validation
-                flash(f"The password or username {username} does not exist and details do not match our records")
+                flash(f"There was a problem logging in. Check your username and password or create an account.")
                 return redirect(url_for('login'))
         
         else:
-            flash(f"The username {username} does not exist")
+            flash(f"The username {username} does not exist.")
             return redirect(url_for('login'))
 
     return render_template('login.html')
