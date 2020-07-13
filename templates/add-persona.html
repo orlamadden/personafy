@@ -55,7 +55,7 @@
             ></textarea>
           </div>
           <div class="form-group">
-            <label for="basic-url">User Persona Profile Image (optional)</label>
+            <label for="profile-url">User Persona Profile Image (optional)</label>
             <small>We recommend using an image from Pexels or Unsplash</small>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -67,7 +67,7 @@
                 type="text"
                 class="form-control"
                 name="profile"
-                id="basic-url"
+                id="profile-url"
                 aria-describedby="basic-addon3"
               />
             </div>
@@ -95,16 +95,37 @@
               {% endfor %}
             </select>
           </div>
-          <div class="form-group new-goal goal">
+          <div class="form-group">
             <div class="input-row">
-              <label for="goals">User Persona Goals *</label>
-              <textarea
+              <label for="goal-one">User Persona Goal 1</label>
+              <input
                 class="form-control mb-3"
-                name="goals"
-                id="goals"
-                rows="2"
+                name="goal-one"
+                id="goal-one"
                 required
-              ></textarea>
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-row">
+              <label for="goal-two">User Persona Goal 2</label>
+              <input
+                class="form-control mb-3"
+                name="goal-two"
+                id="goal-two"
+                required
+              >
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-row">
+              <label for="goal-three">User Persona Goal 3</label>
+              <input
+                class="form-control mb-3"
+                name="goal-three"
+                id="goal-three"
+                required
+              >
             </div>
           </div>
           <div class="form-group">
