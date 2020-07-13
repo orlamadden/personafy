@@ -113,7 +113,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="goal-one">User Persona Goal - One</label>
+            <label for="goal-one">User Persona Goal 1</label>
             <input
               class="form-control mb-3"
               name="goal-one"
@@ -123,7 +123,7 @@
             >
           </div>
           <div class="form-group">
-            <label for="goal-two">User Persona Goal - Two</label>
+            <label for="goal-two">User Persona Goal 2</label>
             <input
               class="form-control mb-3"
               name="goal-two"
@@ -133,7 +133,7 @@
             >
           </div>
           <div class="form-group">
-            <label for="goal-three">User Persona Goal - Three</label>
+            <label for="goal-three">User Persona Goal 3</label>
             <input
               class="form-control mb-3"
               name="goal-three"
@@ -143,17 +143,35 @@
             >
           </div>
           <div class="form-group">
-            <label for="frustrations">User Persona Frustrations *</label>
-            <textarea
+            <label for="frustrations-one">User Persona Frustration 1</label>
+            <input
               class="form-control mb-3"
-              id="frustrations"
-              name="frustrations"
-              rows="2"
+              id="frustrations-one"
+              name="frustrations-one"
+              value="{{ persona.frustrations[0] }}"
               required
             >
-{{ persona.frustrations }}</textarea
+            </div>
+            <div class="form-group">
+            <label for="frustrations-two">User Persona Frustration 2</label>
+            <input
+              class="form-control mb-3"
+              id="frustrations-two"
+              name="frustrations-two"
+              value="{{ persona.frustrations[1] }}"
+              required
             >
-          </div>
+            </div>
+            <div class="form-group">
+            <label for="frustrations-three">User Persona Frustration 3</label>
+            <input
+              class="form-control mb-3"
+              id="frustrations-three"
+              name="frustrations-three"
+              value="{{ persona.frustrations[2] }}"
+              required
+            >
+            </div>
           <button type="submit" class="btn btn-primary">Update Persona</button>
         </form>
       </div>
