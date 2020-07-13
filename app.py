@@ -103,7 +103,7 @@ def insert_persona():
             'occupation_title': occupation_id,
             'industry_title': industry_id,
             'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
-            'frustrations': request.form.get('frustrations'),
+            'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
             'creator': session['username'],
             'date_created': dateAndTime
         })
@@ -139,8 +139,8 @@ def update_persona(persona_id):
         'profile': request.form.get('profile'),
         'occupation_title': occupation_id,
         'industry_title': industry_id,
-        'goals': request.form.get('goals'),
-        'frustrations': request.form.get('frustrations'),
+        'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
+        'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
         'creator': session['username'],
 
     })
