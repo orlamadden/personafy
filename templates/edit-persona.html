@@ -113,15 +113,33 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="goals">User Persona Goals *</label>
-            <textarea
+            <label for="goal-one">User Persona Goal - One</label>
+            <input
               class="form-control mb-3"
-              name="goals"
-              id="goals"
-              rows="2"
+              name="goal-one"
+              id="goal-one"
+              value="{{ persona.goals[0] }}"
               required
             >
-{{ persona.goals }}</textarea
+          </div>
+          <div class="form-group">
+            <label for="goal-two">User Persona Goal - Two</label>
+            <input
+              class="form-control mb-3"
+              name="goal-two"
+              id="goal-two"
+              value="{{ persona.goals[1] }}"
+              required
+            >
+          </div>
+          <div class="form-group">
+            <label for="goal-three">User Persona Goal - Three</label>
+            <input
+              class="form-control mb-3"
+              name="goal-three"
+              id="goal-three"
+              value="{{ persona.goals[2] }}"
+              required
             >
           </div>
           <div class="form-group">
