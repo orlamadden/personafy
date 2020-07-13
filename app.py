@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, url_for, request, redirect, session, flash
 from flask_pymongo import PyMongo
-from datetime import date
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -41,6 +41,8 @@ def public_personas():
     registered users to Personafy.
     """
     personas = db.persona.find()
+
+    dateCreated = personas
     
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
 
@@ -90,6 +92,7 @@ def insert_persona():
     occupation_title = request.form.get('occupation')
     occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
 
+    dateAndTime = datetime.now()
     
     if request.method == 'POST':
         persona.insert_one({
@@ -99,9 +102,10 @@ def insert_persona():
             'profile': request.form.get('profile'),
             'occupation_title': occupation_id,
             'industry_title': industry_id,
-            'goals': request.form.get('goals'),
+            'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
             'frustrations': request.form.get('frustrations'),
             'creator': session['username'],
+            'date_created': dateAndTime
         })
     
         return redirect(url_for('public_personas'))
