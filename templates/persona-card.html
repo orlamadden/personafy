@@ -11,10 +11,20 @@
 <div class="container persona-full pt-5">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
+    {% if persona.profile != "" %}
       <div
         class="persona-image"
         style="background-image: url({{persona.profile}})"
-      ></div>
+      >
+      </div>
+      {% else %}
+      <div
+        class="persona-image"
+        style="background-image: url(https://i.stack.imgur.com/WeyM8.jpg)"
+      >
+      </div>
+      {% endif %}
+
       <h5 class="mt-3">{{persona.name}}</h5>
       <h6>Occupation: {{persona_occupation.occupation_title}}</h6>
       <h6>Industry: {{persona_industry.industry_title}}</h6>
