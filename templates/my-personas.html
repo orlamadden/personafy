@@ -16,10 +16,17 @@
     %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
       <div class="card">
+        {% if persona.profile != "" %}
         <div class="image-wrap">
             <div class="card-image" style="background-image: url({{persona.profile}})">
             </div>
         </div>
+        {% else %}
+        <div class="image-wrap">
+            <div class="card-image" style="background-image: url(https://i.stack.imgur.com/WeyM8.jpg)">
+            </div>
+        </div>
+        {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{persona.name}} - {{persona.age}}</h5>
           <h6 class="card-text job-title">
