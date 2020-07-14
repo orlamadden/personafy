@@ -18,13 +18,17 @@ messages %}
 <div class="container mt-5">
   <div class="row">
     {% for persona in personas %}
+    <!-- shows public personas if user selects public persona upon creation -->
+    {% if persona.make_public == true %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
       <div class="card">
+      <!-- shows profile image if NOT an empty string -->
       {% if persona.profile != "" %}
         <div class="image-wrap">
             <div class="card-image" style="background-image: url({{persona.profile}})">
             </div>
         </div>
+        <!-- shows random profile image if an empty string -->
         {% else %}
         <div class="image-wrap">
             <div class="card-image" style="background-image: url(https://i.stack.imgur.com/WeyM8.jpg)">
@@ -55,6 +59,7 @@ messages %}
         </div>
       </div>
     </div>
+    {% endif %}
 {% endfor %}
   </div>
 </div>
