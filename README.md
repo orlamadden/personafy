@@ -29,6 +29,26 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
  
 ### Existing Features
 
+#### Navbar
+
+- The navbar contains the main navigation of the website. The brand logo always redirects back to the home page. The navigation links contents change depending on whether the user is logged in as registered user or not.
+
+1. Registered user view of navbar:
+- Home
+- Public Personas
+- Learning
+- Add Persona
+- My Persona
+- Username
+- Logout
+
+2. Non-registered user view of navbar:
+- Home
+- Public Personas
+- Learning
+- Login
+- Register 
+
 #### Register
 
 - Visitors to the website can sign up to the website and have an account. Users need to fill out a basic form which requires entering a username and password. Username and password are stored in the users collection in the database.
@@ -39,7 +59,7 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 
 #### Log out
 
-- Users can log out from their session on the website.
+- Users can log out from their session on the website by pressing the 'logout' button in the navbar.
 
 #### Add a user persona
 
@@ -58,9 +78,18 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 - Logged in users can delete any user persona that they have made. Before a user persona is deleted, a pop up modal displays asking the user if they are sure they want to delete it.
 
 
-### Features Left to Implement
+### Recommended features for future implementation
 
-- Another feature idea 
+#### Search functionality
+
+- In the future, I would like to add the ability for users to search for user personas based on industry or occupation. This would give users more control over what they can find on the site. 
+
+#### Add new occupation and industry
+
+- Users can add new occupations and industries to the database. This will give users more options when creating user personas.
+
+#### Content submission
+- I would like to add a form where users can submit useful videos, articles and other resources that might be useful for creating user personas. The submission would be reviewed by an admin (me) before published.
 
 ## Technologies Used
 
@@ -103,7 +132,11 @@ The types of data stored in MongoDB for this project are:
 
 ## Testing
 
+Automatic testing was not conducted due to time constraints and a knowledge gap.
+
 ### Manual Testing
+
+To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers.
 
 ### Bugs Found
 
