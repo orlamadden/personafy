@@ -8,11 +8,18 @@
       </div>
     </div>
     <div class="row mt-3">
-          <div class="col-sm-12 text-center">
-            <p>You now have the ability to create your own user personas and contribute to the public database of user personas on Personafy.</p>
-            <p>Fill out the form fields below with the required information to create your user persona. When you have completed all the fields, click submit and your user persona will be added to the public database.</p>
-          </div>
-        </div>
+      <div class="col-sm-12 text-center">
+        <p>
+          You now have the ability to create your own user personas and
+          contribute to the public database of user personas on Personafy.
+        </p>
+        <p>
+          Fill out the form fields below with the required information to create
+          your user persona. When you have completed all the fields, click
+          submit and your user persona will be added to the public database.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -22,7 +29,9 @@
       <div class="col-sm-12 col-md-12 col-lg-6">
         <form method="POST" action="{{ url_for('insert_persona') }}">
           <div class="form-group">
-            <label for="fname"><i class="fas fa-user-alt"></i>User Persona Name *</label>
+            <label for="fname"
+              ><i class="fas fa-user-alt"></i>User Persona Name *</label
+            >
             <input
               type="text"
               class="form-control"
@@ -33,7 +42,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="age"><i class="fas fa-address-card"></i>User Persona Age *</label>
+            <label for="age"
+              ><i class="fas fa-address-card"></i>User Persona Age *</label
+            >
             <input
               class="form-control"
               type="number"
@@ -45,7 +56,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="goals"><i class="fas fa-book"></i>User Persona Bio *</label>
+            <label for="goals"
+              ><i class="fas fa-book"></i>User Persona Bio *</label
+            >
             <textarea
               class="form-control"
               name="bio"
@@ -55,7 +68,10 @@
             ></textarea>
           </div>
           <div class="form-group">
-            <label for="profile-url"><i class="fas fa-image"></i>User Persona Profile Image (optional)</label>
+            <label for="profile-url"
+              ><i class="fas fa-image"></i>User Persona Profile Image
+              (optional)</label
+            >
             <small>We recommend using an image from Pexels or Unsplash</small>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -73,7 +89,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="occupation"><i class="fas fa-building"></i>User Persona Occupation *</label>
+            <label for="occupation"
+              ><i class="fas fa-building"></i>User Persona Occupation *</label
+            >
             <select
               class="form-control"
               id="occupation"
@@ -87,7 +105,9 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="industry"><i class="fas fa-store"></i>User Persona Industry *</label>
+            <label for="industry"
+              ><i class="fas fa-store"></i>User Persona Industry *</label
+            >
             <select class="form-control" id="industry" name="industry" required>
               <option selected disabled>Please select...</option>
               {% for sector in industry %}
@@ -97,63 +117,102 @@
           </div>
           <div class="form-group">
             <div class="input-row">
-              <label for="goal-one"><i class="fas fa-smile"></i>User Persona Goal 1</label>
+              <label for="goal-one"
+                ><i class="fas fa-smile"></i>User Persona Goal 1</label
+              >
               <input
                 class="form-control mb-3"
                 name="goal-one"
                 id="goal-one"
                 required
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-row">
-              <label for="goal-two"><i class="fas fa-smile"></i>User Persona Goal 2</label>
+              <label for="goal-two"
+                ><i class="fas fa-smile"></i>User Persona Goal 2</label
+              >
               <input
                 class="form-control mb-3"
                 name="goal-two"
                 id="goal-two"
                 required
-              >
+              />
             </div>
           </div>
           <div class="form-group">
             <div class="input-row">
-              <label for="goal-three"><i class="fas fa-smile"></i>User Persona Goal 3</label>
+              <label for="goal-three"
+                ><i class="fas fa-smile"></i>User Persona Goal 3</label
+              >
               <input
                 class="form-control mb-3"
                 name="goal-three"
                 id="goal-three"
                 required
-              >
+              />
             </div>
           </div>
           <div class="form-group">
-            <label for="frustrations-one"><i class="fas fa-angry"></i>User Persona Frustration 1</label>
+            <label for="frustrations-one"
+              ><i class="fas fa-angry"></i>User Persona Frustration 1</label
+            >
             <input
               class="form-control mb-3"
               id="frustrations-one"
               name="frustrations-one"
               required
-            >
+            />
           </div>
           <div class="form-group">
-            <label for="frustrations-two"><i class="fas fa-angry"></i>User Persona Frustration 2</label>
+            <label for="frustrations-two"
+              ><i class="fas fa-angry"></i>User Persona Frustration 2</label
+            >
             <input
               class="form-control mb-3"
               id="frustrations-two"
               name="frustrations-two"
               required
-            >
+            />
           </div>
           <div class="form-group">
-            <label for="frustrations-three"><i class="fas fa-angry"></i>User Persona Frustration 3</label>
+            <label for="frustrations-three"
+              ><i class="fas fa-angry"></i>User Persona Frustration 3</label
+            >
             <input
               class="form-control mb-3"
               id="frustrations-three"
               name="frustrations-three"
               required
-            >
+            />
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="option"
+                id="publicRadio"
+                value="public"
+              />
+              <label class="form-check-label" for="publicRadio">
+                Public
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="option"
+                id="privateRadio"
+                value="private"
+                checked
+              />
+              <label class="form-check-label" for="privateRadio">
+                Private
+              </label>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary mt-3">
