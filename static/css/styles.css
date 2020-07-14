@@ -1,12 +1,10 @@
-.hero-image {
-    background: url("../img/hero-image.jpg") center no-repeat;
-    background-size: cover;
-    height: 75vh;
-    position: relative;
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 .icon-block {
     background-color: rgb(193, 223, 255);
+    min-height: 300px;
 }
 
 .home-icons i {
@@ -92,4 +90,20 @@ box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
   background-size: cover;
   background-position: center;
   height: 300px;
+}
+
+/* create a persona */
+
+.form-group {
+    padding-top: 20px;
+}
+
+.form-group i {
+    color: #007BFF;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.form-group label {
+    font-weight: 500;
 }
