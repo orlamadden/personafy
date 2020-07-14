@@ -41,8 +41,6 @@ def public_personas():
     registered users to Personafy.
     """
     personas = db.persona.find()
-
-    dateCreated = personas
     
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
 
@@ -94,6 +92,9 @@ def insert_persona():
 
     dateAndTime = datetime.now()
     
+    # takes public value from the form and sets it to true
+    public = True if request.form.get('option') == 'public' else False
+    
     if request.method == 'POST':
         persona.insert_one({
             'name': request.form.get('fname'),
@@ -105,7 +106,8 @@ def insert_persona():
             'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
             'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
             'creator': session['username'],
-            'date_created': dateAndTime
+            'date_created': dateAndTime,
+            'make_public': public
         })
     
         return redirect(url_for('public_personas'))
@@ -253,6 +255,10 @@ def my_personas():
 
     return render_template('my-personas.html',
     personas=personas, occupation=occupation, industry=industry)
+
+@app.route('/hot_tips')
+def hot_tips():
+    return render_template('hot-tips.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
