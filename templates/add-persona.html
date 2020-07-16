@@ -30,12 +30,14 @@
         <form method="POST" action="{{ url_for('insert_persona') }}">
           <div class="form-group">
             <label for="fname"
-              ><i class="fas fa-user-alt"></i>User Persona Name *</label
+              ><i class="fas fa-user-alt"></i>User Persona Name</label
             >
             <input
               type="text"
               class="form-control"
               id="fname"
+              pattern="[a-z]"
+              title="Only letters are valid for name input"
               name="fname"
               placeholder="Full name"
               required
