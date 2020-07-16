@@ -46,6 +46,10 @@ nav a {
     border-radius: 5px;
 }
 
+.primary-link:hover {
+    background-color: rgb(0, 79, 163);
+}
+
 .primary-link-txt {
     color: rgb(255, 255, 255);
 }
@@ -56,8 +60,12 @@ nav a {
     /* padding: 8px 15px 8px 15px; */
 }
 
-.secondary-link-txt {
+.login-link {
     color: #007BFF;
+}
+
+.login-link:hover {
+    color: rgb(0, 82, 170);
 }
 
 .username-link {
@@ -117,10 +125,18 @@ box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
 
 /* media queries */
 
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 992px) { 
+    .main-title, .main-image {
+        margin-top: 50px;
+    }
+
     .icon-box {
         padding: 20px 30px;
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+
+    .primary-link {
+        width: 100px;
     }
 }
