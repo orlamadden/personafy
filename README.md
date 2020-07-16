@@ -9,21 +9,17 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 #### User Stories
  
 - As a user I want to view the site from any device (mobile, tablet and desktop).
-- As a user I want to have a search box so I can search for personas related to my business area(s). - edit/delete
 - As a user I want to view pre-made personas for inspiration.
 - As a user, I want to be able to print a persona so I can bring it to my team meeting.
-- As a user, I want to read about user personas and best practice, tips and tricks for using a user person in my projects.
+- As a user, I want to read about user personas and best practice, tips and tricks for using a user persona in my projects.
 
 - As a user-contributor, I want to be able to create my own profile.
 - As a user-contributor, I want to be able to create my own personas.
-- As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace. -delete
-- As a user-contributor, I want to be able to make some of my personas public. - delete
+- As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.
 - As a user-contributor, I want to be able to edit/modify an existing persona. 
 - As a user-contributor, I want to be able to delete an existing persona.
 - As a user-contributor, I want to have a confirmation/warning before deleting an entry.
 - As a user-contributor, I want to be able to log out of my account.
-- As a user-contributor, I want to be able to delete my account if I do not want to use the website any more.
-
 
 ## Features
  
@@ -160,14 +156,66 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+### Local Deployment
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+To run this project locally on your machine, you will need to install/use the following:
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+- Python 3
+- PIP
+- Git
+- MongoDB
+- An IDE such as Visual Studio Code or PyCharm.
+
+To use this project, complete the following steps:
+
+- Go to the Repository link at the top of this document and click on the Code button and copy the link provided, or alternatively download the zip-file. Be sure to unzip the file first.
+
+![https://res.cloudinary.com/orla2020/image/upload/v1594882567/milestone-three/code-screenshot_ojcwmc.png](https://res.cloudinary.com/orla2020/image/upload/v1594882567/milestone-three/code-screenshot_ojcwmc.png)
+
+- Open the project in your preferred IDE.
+- Install the required dependencies for this project by running the following command in your terminal:
+```
+pip3 install -r requirements.txt
+```
+- In the root directory of you project, create an env.py file where you will store sensitive information.
+- Inside your env.py file, be sure to create a SECRET_KEY variable and a MONGO_URI to link to your own database.
+- Sign up for an account (free) at MongoDB and create a new database. You can call this database whatever you want, but to hook it up with this project, it is recommended to call the database Personafy.
+- In the database, you should have the following collections:
+
+Users
+```
+_id: <ObjectId>
+username: <string>
+password: <string>
+```
+
+Persona
+```
+_id: <ObjectId>
+name: <string>
+age: <string>
+bio: <string>
+profile: <string>
+occupation_title: <ObjectId>
+industry_title: <ObjectId>
+goals: <array>
+frustrations: <array>
+creator: <string>
+make_public: <boolean>
+```
+
+Occupation
+```
+_id: <ObjectId>
+occupation_title: <string>
+```
+
+Industry
+```
+_id: <ObjectId>
+industry_title: <string>
+```
+### Remote Deployment
 
 
 ## Credits
