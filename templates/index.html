@@ -5,7 +5,7 @@ messages %}
 <div class="container mt-2" id="alert-message">
   <div class="row">
     <div class="col-sm-12">
-      <div class="alert alert-warning alert-dismissible show fade" role="alert">
+      <div class="alert alert-success alert-dismissible show fade" role="alert">
         {{ message}}
         <button
           type="button"
@@ -22,7 +22,7 @@ messages %}
 {% endfor %} {% endif %} {% endwith %}
 <section class="container hero-image d-flex align-items-center">
   <div class="row">
-    <div class="col-sm-12 col-md-12 col-lg-6 align-self-center">
+    <div class="col-sm-12 col-md-12 col-lg-6 align-self-center main-title">
       <h1>Welcome to Personafy</h1>
       <p>Create custom user personas in minutes.</p>
       <a
@@ -32,7 +32,7 @@ messages %}
         >Explore personas</a
       >
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-6">
+    <div class="col-sm-12 col-md-12 col-lg-6 main-image">
     <img src="{{url_for('static', filename='img/hero-image.png') }}" height="500" class="img-fluid" alt="">
     </div>
   </div>
