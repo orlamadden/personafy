@@ -4,7 +4,8 @@ body {
 
 .icon-block {
     background-color: rgb(193, 223, 255);
-    min-height: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .home-icons i {
@@ -17,6 +18,16 @@ body {
     font-size: 1.2em;
     line-height: 1.2em;
     padding-bottom: 10px;
+}
+
+/* footer */
+
+.footer-links li {
+    list-style-type: none;
+}
+
+.footer-links i {
+    color: #D8D8D8;
 }
 
 /* Navigation menu */
@@ -53,10 +64,6 @@ nav a {
     background-color:#007BFF;
     border-radius: 10px;
     padding: 8px 10px 8px 10px;
-}
-
-.dropdown:hover > .dropdown-menu {
-  display: block;
 }
 
 /* public cards page */
@@ -106,4 +113,14 @@ box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
 
 .form-group label {
     font-weight: 500;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 768px) { 
+    .icon-box {
+        padding: 20px 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 }
