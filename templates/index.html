@@ -38,22 +38,28 @@ messages %}
 </section>
 <!-- icon block -->
 <section class="icon-block">
-  <div class="container pt-5 pb-5">
+  <div class="container pt-5 pb-5 text-center">
     <div class="row">
       <div class="col-sm-12 col-md-4">
+        <div class="icon-box">
         <span class="home-icons"><i class="fas fa-search-plus"></i></span>
         <h4 class="extra-info">View pre-built user personas</h4>
-        <button class="btn btn-light">View personas</button>
+        <a href="{{url_for('public_personas')}}" class="btn btn-light">View personas</a>
+        </div>
       </div>
       <div class="col-sm-12 col-md-4">
+      <div class="icon-box">
         <span class="home-icons"><i class="fas fa-user-plus"></i></span>
         <h4 class="extra-info">Sign up and create your own</h4>
-        <button class="btn btn-light">Sign up</button>
+        <a href="{{url_for('register')}}" class="btn btn-light">Sign up</a>
+      </div>
       </div>
       <div class="col-sm-12 col-md-4">
+      <div class="icon-box">
         <span class="home-icons"><i class="fas fa-graduation-cap"></i></span>
         <h4 class="extra-info">Learn how to create a user persona</h4>
-        <button class="btn btn-light">Learn more</button>
+        <a href="{{url_for('hot_tips')}}" class="btn btn-light">Learn more</a>
+        </div>
       </div>
     </div>
   </div>
