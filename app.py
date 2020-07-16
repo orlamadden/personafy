@@ -133,6 +133,9 @@ def update_persona(persona_id):
     occupation_title = request.form.get('occupation')
     occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
 
+    # takes public value from the form and sets it to true
+    public = True if request.form.get('option') == 'public' else False
+
     persona.update({'_id': ObjectId(persona_id)},
     {
         'name': request.form.get('fname'),
@@ -144,6 +147,7 @@ def update_persona(persona_id):
         'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
         'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
         'creator': session['username'],
+        'make_public': public
 
     })
     
