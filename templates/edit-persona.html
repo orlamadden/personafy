@@ -29,7 +29,9 @@
           action="{{ url_for('update_persona', persona_id=persona._id) }}"
         >
           <div class="form-group">
-            <label for="fname"><i class="fas fa-user-alt"></i>User Persona Name *</label>
+            <label for="fname"
+              ><i class="fas fa-user-alt"></i>User Persona Name</label
+            >
             <input
               type="text"
               class="form-control"
@@ -42,7 +44,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="age"><i class="fas fa-address-card"></i>User Persona Age *</label>
+            <label for="age"
+              ><i class="fas fa-address-card"></i>User Persona Age</label
+            >
             <input
               class="form-control"
               type="number"
@@ -52,7 +56,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="goals"><i class="fas fa-book"></i>User Persona Bio *</label>
+            <label for="goals"
+              ><i class="fas fa-book"></i>User Persona Bio</label
+            >
             <textarea
               class="form-control"
               name="bio"
@@ -64,7 +70,10 @@
             >
           </div>
           <div class="form-group">
-            <label for="basic-url"><i class="fas fa-image"></i>User Persona Profile Image (optional)</label>
+            <label for="basic-url"
+              ><i class="fas fa-image"></i>User Persona Profile Image
+              (optional)</label
+            >
             <small>We recommend using an image from Pexels or Unsplash</small>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -83,7 +92,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="occupation"><i class="fas fa-building"></i>User Persona Occupation *</label>
+            <label for="occupation"
+              ><i class="fas fa-building"></i>User Persona Occupation</label
+            >
             <select class="form-control" id="occupation" name="occupation">
               <option selected>Please select...</option>
               {% for job in occupation %} {% if persona.occupation_title ==
@@ -99,7 +110,9 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="sector"><i class="fas fa-store"></i>User Persona Industry *</label>
+            <label for="sector"
+              ><i class="fas fa-store"></i>User Persona Industry</label
+            >
             <select class="form-control" id="sector" name="industry">
               <option selected>Please select...</option>
               {% for sector in industry %} {% if persona.industry_title ==
@@ -115,66 +128,78 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="goal-one"><i class="fas fa-smile"></i>User Persona Goal 1</label>
+            <label for="goal-one"
+              ><i class="fas fa-smile"></i>User Persona Goal 1</label
+            >
             <input
               class="form-control mb-3"
               name="goal-one"
               id="goal-one"
               value="{{ persona.goals[0] }}"
               required
-            >
+            />
           </div>
           <div class="form-group">
-            <label for="goal-two"><i class="fas fa-smile"></i>User Persona Goal 2</label>
+            <label for="goal-two"
+              ><i class="fas fa-smile"></i>User Persona Goal 2</label
+            >
             <input
               class="form-control mb-3"
               name="goal-two"
               id="goal-two"
               value="{{ persona.goals[1] }}"
               required
-            >
+            />
           </div>
           <div class="form-group">
-            <label for="goal-three"><i class="fas fa-smile"></i>User Persona Goal 3</label>
+            <label for="goal-three"
+              ><i class="fas fa-smile"></i>User Persona Goal 3</label
+            >
             <input
               class="form-control mb-3"
               name="goal-three"
               id="goal-three"
               value="{{ persona.goals[2] }}"
               required
-            >
+            />
           </div>
           <div class="form-group">
-            <label for="frustrations-one"><i class="fas fa-angry"></i>User Persona Frustration 1</label>
+            <label for="frustrations-one"
+              ><i class="fas fa-angry"></i>User Persona Frustration 1</label
+            >
             <input
               class="form-control mb-3"
               id="frustrations-one"
               name="frustrations-one"
               value="{{ persona.frustrations[0] }}"
               required
+            />
+          </div>
+          <div class="form-group">
+            <label for="frustrations-two"
+              ><i class="fas fa-angry"></i>User Persona Frustration 2</label
             >
-            </div>
-            <div class="form-group">
-            <label for="frustrations-two"><i class="fas fa-angry"></i>User Persona Frustration 2</label>
             <input
               class="form-control mb-3"
               id="frustrations-two"
               name="frustrations-two"
               value="{{ persona.frustrations[1] }}"
               required
+            />
+          </div>
+          <div class="form-group">
+            <label for="frustrations-three"
+              ><i class="fas fa-angry"></i>User Persona Frustration 3</label
             >
-            </div>
-            <div class="form-group">
-            <label for="frustrations-three"><i class="fas fa-angry"></i>User Persona Frustration 3</label>
             <input
               class="form-control mb-3"
               id="frustrations-three"
               name="frustrations-three"
               value="{{ persona.frustrations[2] }}"
               required
-            >
-            </div>
-            <div class="form-group">
+            />
+          </div>
+          <div class="form-group">
             <div class="form-check">
               <input
                 class="form-check-input"
