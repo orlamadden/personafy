@@ -85,7 +85,6 @@
                 name="profile"
                 value="{{ persona.profile }}"
                 id="basic-url"
-                aria-describedby="basic-addon3"
               />
             </div>
           </div>
@@ -94,7 +93,7 @@
               ><i class="fas fa-building"></i>User Persona Occupation</label
             >
             <select class="form-control" id="occupation" name="occupation">
-              <option selected>Please select...</option>
+              <option selected disabled>Please select...</option>
               {% for job in occupation %} {% if persona.occupation_title ==
               job['_id'] %}
               <option value="{{ job['occupation_title'] }}" selected
@@ -112,7 +111,7 @@
               ><i class="fas fa-store"></i>User Persona Industry</label
             >
             <select class="form-control" id="sector" name="industry">
-              <option selected>Please select...</option>
+              <option selected disabled>Please select...</option>
               {% for sector in industry %} {% if persona.industry_title ==
               sector['_id'] %}
               <option value="{{ sector['industry_title'] }}" selected
