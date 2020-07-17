@@ -1,8 +1,39 @@
 # Personafy
 
+## Project Overview
+
 Personafy is an online tool for creating custom user personas in minutes. Users have the ability to search for pre-built templates, or sign up to create their own personas based on their own personal / business needs.
 
 Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete users personas using Personafy.
+
+## Table of Contents
+
+1. [**UX**](#UX)
+    - [**Project Goals**](#project-goals)
+    - [**User Stories**](#user-stories)
+    - [**Wireframes**](#wireframes)
+    - [**Design Choices**](#design-choices)
+2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Recommendations for future implementation**](#recommendations-for-future-implementation)
+3. [**Technology**](#technology)
+    - [**Technologies used**](#frontend-technologies-used)
+    - [**Other**](#other)
+4. [**Testing**](#testing)
+    - [**Validators used**](#validators-used)
+    - [**Manual Tests**](#manual-tests)
+    - [**Bugs found**](#bugs-found)
+    - [**User Story Testing**](#user-story-testing)
+5. [**Deployment**](#deployment)
+    - [**Publishing to GitHub Pages**](#publishing-to-github-pages)
+    - [**Local deployment**](#local-deployment)
+6. [**Credits**](#credits)
+    - [**Code**](#code)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Acknowledgements**](#acknowledgements)
+
+--- 
  
 ## UX
 
@@ -38,10 +69,14 @@ I opted to not create wireframes for tablet as in this case the tablet view is m
 
 **Public personas listings page**
 
+*Note - My Personas listings page is the same
+
 - [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-list-view-public-personas_wb4szx.png)
 - [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-public-persona_bkibtv.png)
 
 **Add persona page**
+
+*Note - Edit persona page is the same
 
 - [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-add-persona_snmykf.png)
 - [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-add-persona_p1iga0.png)
@@ -115,8 +150,15 @@ Roboto from Google Fonts was the font choice for this project. I opted for Robot
 
 - A persona card displays on the Public Personas page and My Personas page when a user creates a user persona. The user persona card contains an image (submitted by the user or a placeholder image), the user persona name, their industry, their occupation and their age.
 
+#### Make personas public or private
+
+- Registered users have the ability to keep personas private and not for public viewing. This is a required user story as the user may be using the user persona for a business project.
 
 ### Recommended features for future implementation
+
+#### Exanded user persona Details
+
+- I would like to add more information about the user persona for a more narrow scope, such as demographics and tasks that are usually performed throughout a praticular webite/mobile application process.
 
 #### Search functionality
 
@@ -182,6 +224,19 @@ Automatic testing was not conducted due to time constraints and a knowledge gap.
 
 To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers.
 
+### Validators used
+
+[W3C HTML Validator](https://validator.w3.org/)
+
+- 7 errors found, 1 warning.
+   - **_Element li not allowed as child of element div in this context. (Suppressing further errors from this subtree.)_** - this error was found 5 times on the home page. The ```<li>``` tags in the footer were not contained within a ```<ul>``` or ```<ol>``` tag. This was fixed.
+   - **_End tag br_** - incorrect syntax for the ```<br>``` tag, this was fixed.
+   - **_Duplicate ID delete-modal_** - there was an id duplication on the pop up modal, this was fixed. 
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+- No errors.
+
 ### Bugs Found
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
@@ -200,7 +255,22 @@ In addition, you should mention in this section how your project looks and works
 
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+#### Solved bugs
+
+1. **Database displaying null values**
+
+- In the early stages of creating the project, when a form was submitted from the add user persona page, the database was displaying null values with the associated key.
+- A name attribute was missing from the input tag in the form, this was causing the associated value to not display any information. The solution was found here on [W3Schools](https://www.w3schools.com/tags/att_input_name.asp#:~:text=Definition%20and%20Usage,passed%20when%20submitting%20a%20form.).
+
+2. **'Please select' option being submitted from form**
+
+- The create user persona form has a 'please select' option in the occuption and industry dropdown which display as a placeholder value when users open the form. During development, this value was able to be submitted.
+- To stop this value from being submitted, I inserted the 'disabled' attribute to the option so it was not clickable.
+
+3. **An existing username could be registered more than once**
+
+- When users decide to create a username for Personafy, the same username could be input more than once.
+- To stop this from occuring, an if-else statement was created in the register function in app.py. It checks if a username already exists. If it exists, it flashes an error on the registration page and asks the user to try another name.
 
 ## Deployment
 
@@ -272,7 +342,7 @@ industry_title: <string>
 
 - Register and user login was adapted from this [repository](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py).
 - Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.).
-- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session)(the respective links are on the Hot Tips page.)
+- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session) (the respective links are on the Hot Tips page.)
 
 ### Content
 
