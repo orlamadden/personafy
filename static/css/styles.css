@@ -91,6 +91,14 @@ nav a {
     border-radius: 10px; */
 }
 
+.persona-full i {
+    font-size: 1.4em;
+}
+
+.persona-full .btn:hover {
+    color: #007BFF;
+}
+
 .persona-image {
   background-size: cover;
   background-position: center;
