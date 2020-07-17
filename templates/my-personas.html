@@ -48,7 +48,7 @@ messages %}
         </div>
         {% endif %}
         <div class="card-body">
-          <h5 class="card-title">{{persona.name}} - {{persona.age}}</h5>
+          <h5 class="card-title">{{persona.name}}</h5>
           <h6 class="card-text job-title">
             {% for occ in occupation %}
              {% if persona.occupation_title == occ["_id"] %}
