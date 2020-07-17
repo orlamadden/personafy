@@ -109,8 +109,10 @@ def insert_persona():
             'date_created': dateAndTime,
             'make_public': public
         })
+
+        flash("Your persona has successfully been created!")
     
-        return redirect(url_for('public_personas'))
+        return redirect(url_for('my_personas'))
     return render_template('add-persona.html', persona=persona, occupation=occupation, industry=industry)
 
 @app.route('/edit_persona/<persona_id>')
@@ -150,8 +152,10 @@ def update_persona(persona_id):
         'make_public': public
 
     })
+
+    flash("You have updated your persona.")
     
-    return redirect(url_for('public_personas'))
+    return redirect(url_for('my_personas'))
 
 @app.route('/delete_persona/<persona_id>')
 def delete_persona(persona_id):
@@ -159,7 +163,7 @@ def delete_persona(persona_id):
     persona.remove({'_id': ObjectId(persona_id)})
     flash("Your persona has successfully been deleted.")
     
-    return redirect(url_for('public_personas'))
+    return redirect(url_for('my_personas'))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -218,7 +222,7 @@ def login():
             message when user successfully logs in.
             """
             if check_password_hash(reg_user["password"], password):
-                flash(f"Welcome back {username}", "success")
+                flash(f"Welcome back {username}!", "success")
                 session['username'] = username
                 return redirect(url_for('index', username=session["username"]))
                 
