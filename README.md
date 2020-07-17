@@ -6,7 +6,11 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
  
 ## UX
 
-#### User Stories
+### Project purpose
+
+The goal of this project is to showcase user personas for developers, designers or marketeers who are in the process of creating and/or updating websites. The users who access to website will be able to view pre-built user personas in a particular industry or role, or create their own specific user personas for their own business needs.
+
+### User Stories
  
 - As a user I want to view the site from any device (mobile, tablet and desktop).
 - As a user I want to view pre-made personas for inspiration.
@@ -20,6 +24,40 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 - As a user-contributor, I want to be able to delete an existing persona.
 - As a user-contributor, I want to have a confirmation/warning before deleting an entry.
 - As a user-contributor, I want to be able to log out of my account.
+
+### Wireframes
+
+I used Balsamiq to complete my wireframes as part of the design and planning process for this project. I usually use Adobe Illustrator to create my wireframes, but I enjoyed learning Balsamiq and using its pre-built components. I made minor changes throughout the development stage of the project, so my website looks slightly different than the wireframes based on user feedback as part of my development iteration process. The core concept is of the website is still there.
+
+I opted to not create wireframes for tablet as in this case the tablet view is mirrored in mobile view. The business case for this website is that Personafy would be used by designers, developers and marketeers, so desktop view took priority as it is invisioned that it would be used in an office setting.
+
+**Home page**
+
+- [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-home_dzrzo7.png)
+- [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-home_rbyjei.png)
+
+**Public personas listings page**
+
+- [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-list-view-public-personas_wb4szx.png)
+- [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-public-persona_bkibtv.png)
+
+**Add persona page**
+
+- [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-add-persona_snmykf.png)
+- [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-add-persona_p1iga0.png)
+
+**View persona page**
+
+- [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-view-entry_df96fy.png)
+- [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-view-persona_rqioxf.png)
+
+### Design Choices
+
+#### Font
+
+Roboto from Google Fonts was the font choice for this project. I opted for Roboto due to legibility on all devices and it's professional look. It's simple,easy for users to read and has a vast selection of font weights and font styles that can be implemented if necessary.
+
+#### Colours
 
 ## Features
  
@@ -73,6 +111,10 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 
 - Logged in users can delete any user persona that they have made. Before a user persona is deleted, a pop up modal displays asking the user if they are sure they want to delete it.
 
+#### Persona card
+
+- A persona card displays on the Public Personas page and My Personas page when a user creates a user persona. The user persona card contains an image (submitted by the user or a placeholder image), the user persona name, their industry, their occupation and their age.
+
 
 ### Recommended features for future implementation
 
@@ -82,10 +124,15 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 
 #### Add new occupation and industry
 
-- Users can add new occupations and industries to the database. This will give users more options when creating user personas.
+- Give users the ability to create new job titles and industries and submit them to the database. This will give users more options when creating user personas.
 
 #### Content submission
+
 - I would like to add a form where users can submit useful videos, articles and other resources that might be useful for creating user personas. The submission would be reviewed by an admin (me) before published.
+
+#### Admin dashboard
+
+- When a user is signed in, I would like to create a personalised dashboard for them, containing add/edit/delete user persona functionality in one place, how many user personas they have created and join date.
 
 ## Technologies Used
 
@@ -123,6 +170,7 @@ The types of data stored in MongoDB for this project are:
 - ObjectId
 - String
 - Array
+- Boolean 
 
 ### Database Collections Structure
 
@@ -220,15 +268,23 @@ industry_title: <string>
 
 ## Credits
 
+### Code
+
+- Register and user login was adapted from this [repository](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py).
+- Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.).
+- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session)(the respective links are on the Hot Tips page.)
+
 ### Content
-- Register and user login was adapted from this [repo](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py)
-- Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.)
-- Dropdown on hover from this [Stack Overflow post](https://stackoverflow.com/questions/42183672/how-to-implement-a-navbar-dropdown-hover-in-bootstrap-v4)
-- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session)
+
+- All page content on Personafy was written by me.
+- Content on the 'Hot Tips' page was directly taken from [NNGroup](https://www.nngroup.com/). 
 
 ### Media
-- The photos used in this site were obtained from ...
+
+- Hero image on the home page was downloaded from (Stories by Freepik)[https://stories.freepik.com/]
+- Blue placeholder image that displays if a user does not submit a profile image, was created by me in Adobe Illustrator.
+- Other images that are on display on the Public Personas page or My Personas page have been created by the respective registered user.
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I would like to thank my mentor Antonio Rodriquez for his help and support throughout this project.
