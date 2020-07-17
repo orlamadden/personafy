@@ -147,4 +147,13 @@ box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
     .primary-link {
         width: 100px;
     }
+    
+    .footer-links {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .footer-social {
+        margin-top: 20px;
+    }
 }
