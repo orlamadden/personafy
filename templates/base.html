@@ -95,7 +95,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+              <a class="nav-link" href="{{url_for('logout')}}"
+                ><i class="fas fa-sign-out-alt mr-2"></i>Logout</a
+              >
             </li>
           </ul>
           {% else %}
@@ -143,12 +145,18 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('login')}}"
-                ><span class="secondary-link-txt"><i class="fas fa-sign-in-alt mr-2"></i>Login</span></a
+                ><span class="secondary-link-txt"
+                  ><i class="fas fa-sign-in-alt mr-2"></i>Login</span
+                ></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-link custom-size" href="{{url_for('register')}}"
-                ><span class="primary-link-txt"><i class="fas fa-user-plus mr-2"></i>Register</span></a
+              <a
+                class="nav-link primary-link custom-size"
+                href="{{url_for('register')}}"
+                ><span class="primary-link-txt"
+                  ><i class="fas fa-user-plus mr-2"></i>Register</span
+                ></a
               >
             </li>
           </ul>
@@ -162,7 +170,9 @@
     <footer>
       <div class="container pt-5 pb-5">
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-6 order-12 order-md-4 order-lg-1">
+          <div
+            class="col-sm-12 col-md-12 col-lg-6 order-12 order-md-4 order-lg-1"
+          >
             <h3>Personafy</h3>
             <p>
               Personafy aims to be the best showcase of user persona and
@@ -213,20 +223,43 @@
           <div class="col-sm-12 col-md-12 col-lg-2 order-md-2 order-lg-2">
             <div class="footer-links">
               <h5>Interesting stuff</h5>
-              <li><a href="{{url_for('public_personas')}}">Explore Personas</a></li>
+              <li>
+                <a href="{{url_for('public_personas')}}">Explore Personas</a>
+              </li>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-2 order-md-3 order-lg-3">
             <div class="footer-links">
               <h5>Important stuff</h5>
-              <li>Articles<i class="fas fa-info-circle ml-1" data-toggle="tooltip" data-placement="top" title="Coming soon!"></i></li>
+              <li>
+                Articles<i
+                  class="fas fa-info-circle ml-1"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Coming soon!"
+                ></i>
+              </li>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-2 order-md-3 order-lg-4">
             <div class="footer-links">
               <h5>Necessary stuff</h5>
-              <li>Privacy Policy<i class="fas fa-info-circle ml-1" data-toggle="tooltip" data-placement="top" title="Coming soon!"></i></li>
-              <li>Guidelines<i class="fas fa-info-circle ml-1" data-toggle="tooltip" data-placement="top" title="Coming soon!"></i></li>
+              <li>
+                Privacy Policy<i
+                  class="fas fa-info-circle ml-1"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Coming soon!"
+                ></i>
+              </li>
+              <li>
+                Guidelines<i
+                  class="fas fa-info-circle ml-1"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Coming soon!"
+                ></i>
+              </li>
               <li>Contact us</li>
             </div>
           </div>
