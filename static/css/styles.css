@@ -26,6 +26,11 @@ body {
     list-style-type: none;
 }
 
+footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+
 .footer-links i {
     color: #D8D8D8;
 }
@@ -86,11 +91,6 @@ nav a {
 
 /* persona card */
 
-.persona-full {
-    /* border: 2px solid #007BFF;
-    border-radius: 10px; */
-}
-
 .persona-full i {
     font-size: 1.4em;
 }
@@ -104,9 +104,6 @@ nav a {
   background-position: center;
   height: 350px;
   border: 5px solid #007BFF;
-  -webkit-box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
--moz-box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
-box-shadow: -9px 10px 42px -24px rgba(0,0,0,0.75);
 }
 
 .card-image {
