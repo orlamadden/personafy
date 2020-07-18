@@ -41,11 +41,14 @@ def public_personas():
     registered users to Personafy.
     """
     personas = db.persona.find()
+    
+    # gets persona creation date and sorts by
+    # last created 
+    sortDate = personas.sort('date_created', -1)
 
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
 
     industry = [ind for ind in mongo.db.industry.find({}, {"industry_title": 1})]
-
     return render_template('public-personas.html',
     personas=personas, occupation=occupation, industry=industry)
 
@@ -90,7 +93,8 @@ def insert_persona():
     occupation_title = request.form.get('occupation')
     occupation_id = db.occupation.find_one({"occupation_title": occupation_title})["_id"]
 
-    dateAndTime = datetime.now()
+    # gets todays date and inserts as creation date
+    dateCreated = datetime.now()
 
     # takes public value from the form and sets it to true
     public = True if request.form.get('option') == 'public' else False
@@ -106,7 +110,7 @@ def insert_persona():
             'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
             'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
             'creator': session['username'],
-            'date_created': dateAndTime,
+            'date_created': dateCreated,
             'make_public': public
         })
 
@@ -256,6 +260,8 @@ def my_personas():
     A list of all the personas created by a particular user.
     """
     personas = db.persona.find()
+
+    sortDate = personas.sort('date_created', -1)
 
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
 
