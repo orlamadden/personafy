@@ -1,0 +1,19 @@
+[{
+    "_id": {
+        "$oid": "<objectid>"
+    },
+    "name": "<string>",
+    "age": "<string>",
+    "bio": "<string>",
+    "profile": "<string>",
+    "occupation_title": {
+        "$oid": "<objectid>"
+    },
+    "industry_title": {
+        "$oid": "<objectid>"
+    },
+    "goals": "<array>",
+    "frustrations": "<array>",
+    "creator": "<string>",
+    "make_public": "<boolean>"
+}]
