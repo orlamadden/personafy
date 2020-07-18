@@ -15,5 +15,6 @@
     "goals": "<array>",
     "frustrations": "<array>",
     "creator": "<string>",
+    "date_created": "<date>",
     "make_public": "<boolean>"
 }]
