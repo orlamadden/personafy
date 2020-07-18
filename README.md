@@ -313,9 +313,9 @@ You should also mention in this section any interesting bugs or problems you dis
 :white_check_mark: Users can register to Personafy through the register button in the navigation menu. This is easy to spot as it is blue and stands out.
 :white_check_mark: Users fill out the simple form, inputting a username and password. Users click submit to register when the form is filled.
 6.	**As a user-contributor, I want to be able to create my own personas.**  
-:white_check_mark: A navigation link to 'add persona' is visbile when a user registers to Personafy.  
-:grey_question: Some users expected the 'add persona' option to be under the username's link as a dropdown, like a Udemy style dropdown of options under a user account. This is something to consider for future updates.
-:white_check_mark: Users fill out the create a persona form using the input and dropdown options.
+:white_check_mark: A navigation link to 'add persona' is visbile when a user registers to Personafy.    
+:grey_question: Some users expected the 'add persona' option to be under the username's link as a dropdown, like a Udemy style dropdown of options under a user account. This is something to consider for future updates.  
+:white_check_mark: Users fill out the create a persona form using the input and dropdown options.  
 :white_check_mark: Users click the 'Create persona' button to complete the task.
 7. **As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.**
 :white_check_mark: Users fill out the create a persona form using the input and dropdown. 
