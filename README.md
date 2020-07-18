@@ -53,7 +53,6 @@ The goal of this project is to showcase user personas for developers, designers 
 - As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.
 - As a user-contributor, I want to be able to edit/modify an existing persona.
 - As a user-contributor, I want to be able to delete an existing persona.
-- As a user-contributor, I want to have a confirmation/warning before deleting an entry.
 - As a user-contributor, I want to be able to log out of my account.
 
 ### Wireframes
@@ -110,8 +109,11 @@ For this project, I kept design and color to a minimum so users could focus on t
 - Home
 - Public Personas
 - Learning
+  - User persona hot tips
+  - Tutorials
+  - Articles
 - Add Persona
-- My Persona
+- My Personas
 - Username
 - Logout
 
@@ -119,6 +121,9 @@ For this project, I kept design and color to a minimum so users could focus on t
 - Home
 - Public Personas
 - Learning
+  - User persona hot tips
+  - Tutorials
+  - Articles
 - Login
 - Register
 
@@ -226,6 +231,22 @@ Automatic testing was not conducted due to time constraints and a knowledge gap.
 
 To ensure the best user experience, I performed multiple manual tests to ensure the app worked across various devices and on multiple browsers.
 
+#### Browser Compatibility
+
+- Chrome - no issues.
+- Firefox - no issues.
+- Safari - no issues.
+- Microsoft Edge - no issues.
+- Opera - no issues.
+- Internet Explorer - no tests performed on this browser.
+
+#### Devices
+
+- iPhone 11 Pro
+- iPhone XR
+- Samsung Galaxy 8
+- iPhone 11 Pro MAX
+
 ### Validators used
 
 [W3C HTML Validator](https://validator.w3.org/)
@@ -273,6 +294,44 @@ You should also mention in this section any interesting bugs or problems you dis
 
 - When users decide to create a username for Personafy, the same username could be input more than once.
 - To stop this from occuring, an if-else statement was created in the register function in app.py. It checks if a username already exists. If it exists, it flashes an error on the registration page and asks the user to try another name.
+
+### User Story Testing
+
+1. **As a user I want to view the site from any device (mobile, tablet and desktop)**  
+:white_check_mark: The site works and is fully responsive on mobile, tablet and desktop. 
+2. **As a user I want to view pre-made personas for inspiration.**   
+:white_check_mark: I created multiple personas myself before asking users to complete this task. Users were able to navigate to the Public Personas page via the main call-to-action in the hero section of the home page or through the navigation menu.
+3.	**As a user, I want to be able to print a persona so I can bring it to my team meeting.**  
+:white_check_mark: Users navigate to view public persona listings.  
+:white_check_mark: Users can view a single user persona card.  
+:white_check_mark: There is a print button that indicates the page can be printed.  
+:white_check_mark: A print modal displays so the user can print the user persona.
+4.	**As a user, I want to read about user personas and best practice, tips and tricks for using a user persona in my projects.**  
+:white_check_mark: There is a learnings section on the website that can be accessed through the navigation menu.
+:white_check_mark: Users can read tips and best practice on user persona creation.
+5.	**As a user-contributor, I want to be able to create my own profile.**  
+:white_check_mark: Users can register to Personafy through the register button in the navigation menu. This is easy to spot as it is blue and stands out.
+:white_check_mark: Users fill out the simple form, inputting a username and password. Users click submit to register when the form is filled.
+6.	**As a user-contributor, I want to be able to create my own personas.**  
+:white_check_mark: A navigation link to 'add persona' is visbile when a user registers to Personafy.  
+:grey_question: Some users expected the 'add persona' option to be under the username's link as a dropdown, like a Udemy style dropdown of options under a user account. This is something to consider for future updates.
+:white_check_mark: Users fill out the create a persona form using the input and dropdown options.
+:white_check_mark: Users click the 'Create persona' button to complete the task.
+7. **As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.**
+:white_check_mark: Users fill out the create a persona form using the input and dropdown. 
+:white_check_mark: At the end of the create a user persona form, there is a radio button that enables users to keep their personas private, or make them public.
+:white_check_mark: Users noticed their private personas were only visible under the My Personas page and not visible on the Public Personas page.
+8. **As a user-contributor, I want to be able to edit/modify an existing persona.**
+:white_check_mark: Users can only edit personas they have created by clicking on the 'Edit' button on an individual user persona view.
+:white_check_mark: Users are taken to an edit persona form that can be edited using text, number and dropdown options.
+:white_check_mark: When users are finished making changes, they click the 'Update persona' button at the end of the form.
+9. **As a user-contributor, I want to be able to delete an existing persona.**
+:white_check_mark: Users can only delete user personas that they have created by clicking on the 'Delete' button on an individual user persona view.
+:white_check_mark: A pop up modal displays a message asking the user if they are sure that they want to delete the choosen persona.
+:white_check_mark: Users can cancel this action, or proceed by clicking 'Yes, delete'.
+10. **As a user-contributor, I want to be able to log out of my account.**
+:white_check_mark: Users can log out by clicking the 'Logout' button in the navigation bar.
+:white_check_mark: A message flashes when a user successfully logs out.
 
 ## Deployment
 
@@ -370,12 +429,12 @@ $ git push heroku master
 
 - Register and user login was adapted from this [repository](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py).
 - Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.).
-- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session) (the respective links are on the Hot Tips page.)
+- Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session).
 
 ### Content
 
 - All page content on Personafy was written by me.
-- Content on the 'Hot Tips' page was directly taken from [NNGroup](https://www.nngroup.com/).
+- Content on the 'Hot Tips' page was directly taken from [NNGroup](https://www.nngroup.com/) (the respective links are on the Hot Tips page).
 
 ### Media
 
