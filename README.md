@@ -317,20 +317,20 @@ You should also mention in this section any interesting bugs or problems you dis
 :grey_question: Some users expected the 'add persona' option to be under the username's link as a dropdown, like a Udemy style dropdown of options under a user account. This is something to consider for future updates.  
 :white_check_mark: Users fill out the create a persona form using the input and dropdown options.  
 :white_check_mark: Users click the 'Create persona' button to complete the task.
-7. **As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.**
-:white_check_mark: Users fill out the create a persona form using the input and dropdown. 
-:white_check_mark: At the end of the create a user persona form, there is a radio button that enables users to keep their personas private, or make them public.
-:white_check_mark: Users noticed their private personas were only visible under the My Personas page and not visible on the Public Personas page.
+7. **As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.**  
+:white_check_mark: Users fill out the create a persona form using the input and dropdown.  
+:white_check_mark: At the end of the create a user persona form, there is a radio button that enables users to keep their personas private, or make them public.  
+:white_check_mark: Users noticed their private personas were only visible under the My Personas page and not visible on the Public Personas page.  
 8. **As a user-contributor, I want to be able to edit/modify an existing persona.**
-:white_check_mark: Users can only edit personas they have created by clicking on the 'Edit' button on an individual user persona view.
-:white_check_mark: Users are taken to an edit persona form that can be edited using text, number and dropdown options.
+:white_check_mark: Users can only edit personas they have created by clicking on the 'Edit' button on an individual user persona view.  
+:white_check_mark: Users are taken to an edit persona form that can be edited using text, number and dropdown options.  
 :white_check_mark: When users are finished making changes, they click the 'Update persona' button at the end of the form.
 9. **As a user-contributor, I want to be able to delete an existing persona.**
-:white_check_mark: Users can only delete user personas that they have created by clicking on the 'Delete' button on an individual user persona view.
-:white_check_mark: A pop up modal displays a message asking the user if they are sure that they want to delete the choosen persona.
+:white_check_mark: Users can only delete user personas that they have created by clicking on the 'Delete' button on an individual user persona view.  
+:white_check_mark: A pop up modal displays a message asking the user if they are sure that they want to delete the choosen persona.  
 :white_check_mark: Users can cancel this action, or proceed by clicking 'Yes, delete'.
 10. **As a user-contributor, I want to be able to log out of my account.**
-:white_check_mark: Users can log out by clicking the 'Logout' button in the navigation bar.
+:white_check_mark: Users can log out by clicking the 'Logout' button in the navigation bar.  
 :white_check_mark: A message flashes when a user successfully logs out.
 
 ## Deployment
