@@ -69,14 +69,14 @@ I opted to not create wireframes for tablet as in this case the tablet view is m
 
 **Public personas listings page**
 
-*Note - My Personas listings page is the same
+*Note - My Personas listings page is the same as public listings page
 
 - [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-list-view-public-personas_wb4szx.png)
 - [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-public-persona_bkibtv.png)
 
 **Add persona page**
 
-*Note - Edit persona page is the same
+*Note - Edit persona page is the same as add persona page
 
 - [Desktop](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/desktop-add-persona_snmykf.png)
 - [Mobile](https://res.cloudinary.com/orla2020/image/upload/v1595017199/milestone-three/mobile-add-persona_p1iga0.png)
@@ -93,6 +93,10 @@ I opted to not create wireframes for tablet as in this case the tablet view is m
 Roboto from Google Fonts was the font choice for this project. I opted for Roboto due to legibility on all devices and it's professional look. It's simple,easy for users to read and has a vast selection of font weights and font styles that can be implemented if necessary.
 
 #### Colours
+
+For this project, I kept design and color to a minimum so users could focus on the core functionality of the website. The primary colours of the website is blue, white and light grey. The colour blue tends to be used for websites that are trusthworthy and want to give the impression of a professional look and feel, that's why I chose blue. The light colours of white and grey help the blue to stand out more when it is used.
+
+![https://res.cloudinary.com/orla2020/image/upload/v1595092085/milestone-three/MS3-color-palette_j1zjz4.png](https://res.cloudinary.com/orla2020/image/upload/v1595092085/milestone-three/MS3-color-palette_j1zjz4.png)
 
 ## Features
 
@@ -193,17 +197,15 @@ The languages, frameworks and other tools used for this project:
 
 ## Information Architecture
 
-This project utilises the NoSQL database MongoDB to store data. The reason for this is it is recommended to use this type of database for the Milestone 3 project.
-
-### Database Choice
+This project utilises the NoSQL database MongoDB to store data. The reason for this is it is recommended to use this type of database for the Milestone 3 project. 
 
 ### Database Schema
 
 This project's database contains 4 main collections to store data.
-- Personas - stores data about user personas created by registered users
+- Personas - stores data about user personas created by registered users (example)
 - Industry - stores data about industries
 - Occupation - stores data about occupations
-- Users - stores username and hashed passwords from registered users
+- Users - stores username and hashed passwords from registered users (example)
 
 ### Data Storage Types
 
@@ -300,14 +302,14 @@ pip3 install -r requirements.txt
 - Sign up for an account (free) at MongoDB and create a new database. You can call this database whatever you want, but to hook it up with this project, it is recommended to call the database Personafy.
 - In the database, you should have the following collections:
 
-Users
+**Users**
 ```
 _id: <ObjectId>
 username: <string>
 password: <string>
 ```
 
-Persona
+**Persona**
 ```
 _id: <ObjectId>
 name: <string>
@@ -322,13 +324,13 @@ creator: <string>
 make_public: <boolean>
 ```
 
-Occupation
+**Occupation**
 ```
 _id: <ObjectId>
 occupation_title: <string>
 ```
 
-Industry
+**Industry**
 ```
 _id: <ObjectId>
 industry_title: <string>
