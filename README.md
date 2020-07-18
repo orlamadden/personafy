@@ -307,10 +307,10 @@ You should also mention in this section any interesting bugs or problems you dis
 :white_check_mark: There is a print button that indicates the page can be printed.  
 :white_check_mark: A print modal displays so the user can print the user persona.
 4.	**As a user, I want to read about user personas and best practice, tips and tricks for using a user persona in my projects.**  
-:white_check_mark: There is a learnings section on the website that can be accessed through the navigation menu.
+:white_check_mark: There is a learnings section on the website that can be accessed through the navigation menu.  
 :white_check_mark: Users can read tips and best practice on user persona creation.
 5.	**As a user-contributor, I want to be able to create my own profile.**  
-:white_check_mark: Users can register to Personafy through the register button in the navigation menu. This is easy to spot as it is blue and stands out.
+:white_check_mark: Users can register to Personafy through the register button in the navigation menu. This is easy to spot as it is blue and stands out.  
 :white_check_mark: Users fill out the simple form, inputting a username and password. Users click submit to register when the form is filled.
 6.	**As a user-contributor, I want to be able to create my own personas.**  
 :white_check_mark: A navigation link to 'add persona' is visbile when a user registers to Personafy.    
@@ -321,15 +321,15 @@ You should also mention in this section any interesting bugs or problems you dis
 :white_check_mark: Users fill out the create a persona form using the input and dropdown.  
 :white_check_mark: At the end of the create a user persona form, there is a radio button that enables users to keep their personas private, or make them public.  
 :white_check_mark: Users noticed their private personas were only visible under the My Personas page and not visible on the Public Personas page.  
-8. **As a user-contributor, I want to be able to edit/modify an existing persona.**
+8. **As a user-contributor, I want to be able to edit/modify an existing persona.**  
 :white_check_mark: Users can only edit personas they have created by clicking on the 'Edit' button on an individual user persona view.  
 :white_check_mark: Users are taken to an edit persona form that can be edited using text, number and dropdown options.  
 :white_check_mark: When users are finished making changes, they click the 'Update persona' button at the end of the form.
-9. **As a user-contributor, I want to be able to delete an existing persona.**
+9. **As a user-contributor, I want to be able to delete an existing persona.**  
 :white_check_mark: Users can only delete user personas that they have created by clicking on the 'Delete' button on an individual user persona view.  
 :white_check_mark: A pop up modal displays a message asking the user if they are sure that they want to delete the choosen persona.  
 :white_check_mark: Users can cancel this action, or proceed by clicking 'Yes, delete'.
-10. **As a user-contributor, I want to be able to log out of my account.**
+10. **As a user-contributor, I want to be able to log out of my account.**  
 :white_check_mark: Users can log out by clicking the 'Logout' button in the navigation bar.  
 :white_check_mark: A message flashes when a user successfully logs out.
 
