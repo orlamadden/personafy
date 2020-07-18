@@ -350,9 +350,9 @@ To deploy this project to Heroku, the following steps were taken:
 IP | 0.0.0.0
 MONGO_URI | `mongodb+srv://<username>:<password>@<cluster_name>-qtxun.mongodb.net/<database_name>?retryWrites=true&w=majority`
 PORT | 5000
-SECRET_KEY | `<your_secret_key>`
+SECRET_KEY | `YOUR SECRET KEY`
 
-8. In the CLI of your IDE input the following:
+8. In the CLI of IDE input the following:
 
 ```
 $ heroku login
@@ -360,6 +360,7 @@ $ heroku git:remote -a personafy-app
 $ git push heroku master
 ```
 9. The option is there to connect to Github, but I used the CLI method of manually pushing to Heroku each time a change is to be made.
+10. Open Heroku. Open the app and the Personafy app should be running.
 
 ## Credits
 
@@ -376,7 +377,7 @@ $ git push heroku master
 
 ### Media
 
-- Hero image on the home page was downloaded from (Stories by Freepik)[https://stories.freepik.com/]
+- Hero image on the home page was downloaded from [Stories by Freepik](https://stories.freepik.com/)
 - Blue placeholder image that displays if a user does not submit a profile image, was created by me in Adobe Illustrator.
 - Other images that are on display on the Public Personas page or My Personas page have been created by the respective registered user.
 
