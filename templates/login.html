@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %} {% with messages =
+{% extends 'base.html' %} {% block content %} 
+<!-- message flashing -->
+{% with messages =
 get_flashed_messages() %} {% if messages %} {% for message in messages %}
 <div class="container mt-2" id="alert-message">
   <div class="row">
@@ -18,7 +20,7 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
   </div>
 </div>
 {% endfor %} {% endif %} {% endwith %}
-
+<!-- information section -->
 <section>
   <div class="container mt-5 pb-5 pt-5">
     <div class="row">
@@ -35,7 +37,7 @@ get_flashed_messages() %} {% if messages %} {% for message in messages %}
     </div>
   </div>
 </section>
-
+<!-- login form section -->
 <section>
   <div class="container mt-2 mb-5">
     <div class="row justify-content-center">

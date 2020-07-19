@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+<!-- message flashing -->
 {% with messages = get_flashed_messages() %} {% if messages %} {% for message in
 messages %}
 <div class="container mt-2" id="alert-message">
@@ -19,6 +20,7 @@ messages %}
   </div>
 </div>
 {% endfor %} {% endif %} {% endwith %}
+<!-- information section -->
 <div class="container mt-5">
   <div class="row">
   <div class="col-sm-12">
@@ -28,7 +30,7 @@ messages %}
     </div>
   </div>
 </div>
-
+<!-- main content -->
 <div class="container mt-5">
   <div class="row">
     {% for persona in personas %}

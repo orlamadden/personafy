@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<!-- hero block -->
+<!-- message flashing -->
 {% with messages = get_flashed_messages() %} {% if messages %} {% for message in
 messages %}
 <div class="container mt-2" id="alert-message">
@@ -20,6 +20,7 @@ messages %}
   </div>
 </div>
 {% endfor %} {% endif %} {% endwith %}
+<!-- hero block -->
 <section class="container hero-image d-flex align-items-center">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6 align-self-center main-title">
