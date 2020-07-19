@@ -39,7 +39,7 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 
 ### Project purpose
 
-The goal of this project is to showcase user personas for developers, designers or marketeers who are in the process of creating and/or updating websites. The users who access to website will be able to view pre-built user personas in a particular industry or role, or create their own specific user personas for their own business needs.
+The goal of this project is to showcase user personas for developers, designers or marketeers who are in the process of creating and/or updating websites. The users who access the website will be able to view pre-built user personas in a particular industry or role, or create their own specific user personas for their own business needs.
 
 ### User Stories
 
@@ -57,9 +57,9 @@ The goal of this project is to showcase user personas for developers, designers 
 
 ### Wireframes
 
-I used Balsamiq to complete my wireframes as part of the design and planning process for this project. I usually use Adobe Illustrator to create my wireframes, but I enjoyed learning Balsamiq and using its pre-built components. I made minor changes throughout the development stage of the project, so my website looks slightly different than the wireframes based on user feedback as part of my development iteration process. The core concept is of the website is still there.
+I used Balsamiq to complete my wireframes as part of the design and planning process for this project. I usually use Adobe Illustrator to create my wireframes, but I enjoyed learning Balsamiq and using its pre-built components. I made minor changes throughout the development stage of the project, so my website looks slightly different than the wireframes based on user feedback as part of my development iteration process. The core concept of the website is still there.
 
-I opted to not create wireframes for tablet as in this case the tablet view is mirrored in mobile view. The business case for this website is that Personafy would be used by designers, developers and marketeers, so desktop view took priority as it is invisioned that it would be used in an office setting.
+I opted to not create wireframes for tablet as in this case the tablet view is mirrored in mobile view. The business case for this website is that Personafy would be used by designers, developers and marketeers in an office setting, so desktop view took priority.
 
 **Home page**
 
@@ -89,11 +89,11 @@ I opted to not create wireframes for tablet as in this case the tablet view is m
 
 #### Font
 
-Roboto from Google Fonts was the font choice for this project. I opted for Roboto due to legibility on all devices and it's professional look. It's simple,easy for users to read and has a vast selection of font weights and font styles that can be implemented if necessary.
+Roboto from Google Fonts was the font choice for this project. I opted for Roboto due to legibility on all devices and it's professional look. It's simple, easy for users to read and has a vast selection of font weights and font styles that can be implemented if necessary.
 
 #### Colours
 
-For this project, I kept design and color to a minimum so users could focus on the core functionality of the website. The primary colours of the website is blue, white and light grey. The colour blue tends to be used for websites that are trusthworthy and want to give the impression of a professional look and feel, that's why I chose blue. The light colours of white and grey help the blue to stand out more when it is used.
+For this project, I kept design and color to a minimum so users could focus on the core functionality of the website. The primary colours of the website is blue, white and light grey. The colour blue tends to be used for websites that are trusthworthy and want to give the impression of a professional look and feel, that's why it was chosen. The light colours of white and grey help the blue to stand out more when it is used.
 
 ![https://res.cloudinary.com/orla2020/image/upload/v1595092085/milestone-three/MS3-color-palette_j1zjz4.png](https://res.cloudinary.com/orla2020/image/upload/v1595092085/milestone-three/MS3-color-palette_j1zjz4.png)
 
@@ -105,7 +105,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 
 - The navbar contains the main navigation of the website. The brand logo always redirects back to the home page. The navigation links contents change depending on whether the user is logged in as registered user or not.
 
-1. Registered user view of navbar:
+1. **Registered user view of navbar:**
 - Home
 - Public Personas
 - Learning
@@ -117,7 +117,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 - Username
 - Logout
 
-2. Non-registered user view of navbar:
+2. **Non-registered user view of navbar:**
 - Home
 - Public Personas
 - Learning
@@ -129,7 +129,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 
 #### Register
 
-- Visitors to the website can sign up to the website and have an account. Users need to fill out a basic form which requires entering a username and password. Username and password are stored in the users collection in the database.
+- Visitors to the website can sign up and have an account. Users need to fill out a basic form which requires entering a username and password. Username and password are stored in the users collection in the database.
 
 #### Log in
 
@@ -145,7 +145,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 
 #### View user personas
 
-- Read or 'view' user personas, either from the public personas page, or the my perosnas page when the user is logged in. Users can also view an individual user persona. From there, users can print personas, or if a user is logged in, they can also edit their own persona from this screen.
+- Reading or 'viewing' user personas is achieved on the public personas page. If a user is logged in, this action can also be done through the my personas page when the user is logged in. Users can also view an individual user persona. From there, users can print personas, or if a user is logged in, they can also edit and delete their own persona from this screen.
 
 #### Edit a user persona
 
@@ -163,9 +163,13 @@ For this project, I kept design and color to a minimum so users could focus on t
 
 - Registered users have the ability to keep personas private and not for public viewing. This is a required user story as the user may be using the user persona for a business project.
 
-### Recommended features for future implementation
+### Recommended for future implementation
 
-#### Exanded user persona Details
+#### Multi-step form or wizard
+
+- Based on user feedback during the testing phase, it was suggested that I create a multi-step form or a wizard when users are creating a new persona to improve the experience on smaller devices (it may also work for desktop). Due to time constraints, this feature was not possible but is high priority for future updates.
+
+#### Exanded user persona details
 
 - I would like to add more information about the user persona for a more narrow scope, such as demographics and tasks that are usually performed throughout a praticular webite/mobile application process.
 
@@ -191,13 +195,13 @@ The languages, frameworks and other tools used for this project:
 
 - HTML - page structure and content
 - CSS - custom styling
-- JQuery - for print functionality
+- JQuery - for minor DOM manipulation tasks
 - Python3 - backend processing and application logic
 - Bootstrap framework - used as the core structuring layout for the application which ensures mobile-first design
 - Git - used for version control
 - Github - used for remote version control storage
 - Flask framework - template language written in Python, contains Jinja2 and Werkzeug
-- Heroku - used to host the app
+- Heroku - used to host the deployed application
 - MongoDB Atlas - used to store the project's database information
 
 ## Information Architecture
@@ -207,10 +211,10 @@ This project utilises the NoSQL database MongoDB to store data. The reason for t
 ### Database Schema
 
 This project's database contains 4 main collections to store data.
-- Personas - stores data about user personas created by registered users (example)
+- Personas - stores data about user personas created by registered users [(example)](https://github.com/orlamadden/personafy/blob/master/database-schema/personas.json)
 - Industry - stores data about industries
 - Occupation - stores data about occupations
-- Users - stores username and hashed passwords from registered users (example)
+- Users - stores username and hashed passwords from registered users [(example)](https://github.com/orlamadden/personafy/blob/master/database-schema/users.json)
 
 ### Data Storage Types
 
@@ -262,22 +266,6 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 ### Bugs Found
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
 #### Solved bugs
 
 1. **Database displaying null values**
@@ -316,7 +304,8 @@ You should also mention in this section any interesting bugs or problems you dis
 :white_check_mark: A navigation link to 'add persona' is visbile when a user registers to Personafy.    
 :grey_question: Some users expected the 'add persona' option to be under the username's link as a dropdown, like a Udemy style dropdown of options under a user account. This is something to consider for future updates.  
 :white_check_mark: Users fill out the create a persona form using the input and dropdown options.  
-:white_check_mark: Users click the 'Create persona' button to complete the task.
+:white_check_mark: Users click the 'Create persona' button to complete the task.  
+:grey_question: 2 users noted that the experience on filling the form on mobile was a bit long, which is something I had a feeling would happen. I was advised to consider a multi-step form or wizard to improve the experience.
 7. **As a user-contributor, I want to be able to keep my personas private because I am using them for my team at my company workplace.**  
 :white_check_mark: Users fill out the create a persona form using the input and dropdown.  
 :white_check_mark: At the end of the create a user persona form, there is a radio button that enables users to keep their personas private, or make them public.  
@@ -421,7 +410,7 @@ $ heroku git:remote -a personafy-app
 $ git push heroku master
 ```
 9. The option is there to connect to Github, but I used the CLI method of manually pushing to Heroku each time a change is to be made.
-10. Open Heroku. Open the app and the Personafy app should be running.
+10. Open Heroku. Open the app and the Personafy app should run.
 
 ## Credits
 
@@ -430,6 +419,7 @@ $ git push heroku master
 - Register and user login was adapted from this [repository](https://github.com/MiroslavSvec/DCD_lead/blob/master/app.py).
 - Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.).
 - Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session).
+- Assistance with sorting personas by most recent date adapted from this [Stack Overflow post](https://stackoverflow.com/questions/30642725/pymongo-sorting-by-date).
 
 ### Content
 
@@ -438,6 +428,7 @@ $ git push heroku master
 
 ### Media
 
+- Website Logo and favicon created by me in Adobe Illustrator
 - Hero image on the home page was downloaded from [Stories by Freepik](https://stories.freepik.com/)
 - Blue placeholder image that displays if a user does not submit a profile image, was created by me in Adobe Illustrator.
 - Other images that are on display on the Public Personas page or My Personas page have been created by the respective registered user.
