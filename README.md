@@ -440,3 +440,4 @@ $ git push heroku master
 ### Acknowledgements
 
 - I would like to thank my mentor Antonio Rodriquez for his help and support throughout this project.
+- Inspiration for this project was taken from Hubspot's [Make My Persona](https://www.hubspot.com/make-my-persona?__hstc=186349814.17b3501ea17becd7928a3c41e292c83e.1595179666946.1595179666946.1595179666946.1&__hssc=186349814.1.1595179666946&__hsfp=2585151190) web tool.
