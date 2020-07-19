@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="{{url_for('static', filename='img/personafy-favicon.png') }}">
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='css/styles.css') }}"
@@ -25,9 +26,9 @@
   <body>
     <header>
       <!-- Navigation menu -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{url_for('index')}}"
-          ><strong>Personafy</strong></a
+          ><img src="{{url_for('static', filename='img/personafy-logo.png') }}" width="160" height="36" alt="Personafy logo"></a
         >
         <button
           class="navbar-toggler"
