@@ -178,6 +178,8 @@ def update_persona(persona_id):
     # takes public value from the form and sets it to true
     public = True if request.form.get('option') == 'public' else False
 
+    dateCreated = datetime.now()
+
     persona.update({'_id': ObjectId(persona_id)}, {
             'name': request.form.get('fname'),
             'age': request.form.get('age'),
@@ -192,6 +194,7 @@ def update_persona(persona_id):
                              request.form.get('frustrations-two'),
                              request.form.get('frustrations-three')],
             'creator': session['username'],
+            'date_created': dateCreated,
             'make_public': public
 
         })
