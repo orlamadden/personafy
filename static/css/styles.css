@@ -59,10 +59,14 @@ nav a {
     color: rgb(0, 82, 170);
 }
 
-.username-link {
+.nav-btn-link {
     background-color:#007BFF;
     border-radius: 10px;
     padding: 8px 10px 8px 10px;
+}
+
+.register-btn:hover {
+    background-color: #004c9e;
 }
 
 /* footer */
@@ -148,10 +152,6 @@ footer ul {
         padding: 20px 30px;
         margin-top: 15px;
         margin-bottom: 15px;
-    }
-
-    .primary-link {
-        width: 100px;
     }
     
     .footer-links {

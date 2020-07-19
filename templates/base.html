@@ -43,6 +43,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           {% if 'username' in session %}
+          <!-- navigation menu for registered users -->
           <ul class="navbar-nav navbar-custom ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('index')}}">Home</a>
@@ -94,7 +95,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">
-                <span class="username-link">{{ session['username'] }}</span>
+                <span class="nav-btn-link"><i class="fas fa-user-alt mr-2"></i>{{ session['username'] }}</span>
               </a>
             </li>
             <li class="nav-item">
@@ -104,6 +105,7 @@
             </li>
           </ul>
           {% else %}
+          <!-- navigation menu for visitor -->
           <ul class="navbar-nav navbar-custom ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="{{url_for('index')}}"
@@ -155,9 +157,9 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link primary-link custom-size"
+                class="nav-link text-white"
                 href="{{url_for('register')}}"
-                ><span class="primary-link-txt"
+                ><span class="nav-btn-link"
                   ><i class="fas fa-user-plus mr-2"></i>Register</span
                 ></a
               >
