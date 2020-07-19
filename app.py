@@ -48,7 +48,7 @@ def public_personas():
     personas = db.persona.find()
 
     # gets persona creation date and sorts by
-    # last created
+    # last created in public persona page
     sortDate = personas.sort('date_created', -1)
 
     occupation = [occ for occ in mongo.db.occupation.find({},
@@ -252,7 +252,7 @@ def register():
             return redirect(url_for('index', username=session["username"]))
 
         else:
-            flash(f"""Uh oh, that username already exists. Please try another
+            flash("""Uh oh, that username already exists. Please try another
                   username.""", 'warning')
             return redirect(url_for('register'))
 
