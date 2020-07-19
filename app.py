@@ -185,10 +185,17 @@ def register():
     the user if the username does not exist already.
     """
     user = db.user
+
     if request.method == 'POST':
         new_username = request.form.get('username').lower()
         password = request.form.get('password')
         username_exists = user.find_one({'name': request.form.get('username')})
+
+        # checks length of the password
+        if len(password) < 6 or len(password) > 15:
+            flash("Please use 6 - 15 characters for your password. Try again.")
+            return redirect(url_for('register'))
+
 
         # if username entry is not a letter or number, flash message
         for entry in new_username:
