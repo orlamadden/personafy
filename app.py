@@ -2,12 +2,14 @@ import os
 from flask_pymongo import PyMongo
 from datetime import datetime
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, \
+     check_password_hash
 from os import path
 if path.exists("env.py"):
     import env
 
-from flask import Flask, render_template, url_for, request, redirect, session, flash
+from flask import Flask, render_template, url_for, request, redirect, \
+    session, flash
 
 app = Flask(__name__)
 
@@ -48,7 +50,8 @@ def public_personas():
 
     occupation = [occ for occ in mongo.db.occupation.find({}, {"occupation_title": 1})]
 
-    industry = [ind for ind in mongo.db.industry.find({}, {"industry_title": 1})]
+    industry = [ind for ind in mongo.db.industry.find({}, 
+    {"industry_title": 1})]
     return render_template('public-personas.html',
     personas=personas, occupation=occupation, industry=industry)
 
@@ -107,7 +110,9 @@ def insert_persona():
             'profile': request.form.get('profile'),
             'occupation_title': occupation_id,
             'industry_title': industry_id,
-            'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
+            'goals': [request.form.get('goal-one'), 
+            request.form.get('goal-two'), 
+            request.form.get('goal-three')],
             'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
             'creator': session['username'],
             'date_created': dateCreated,
@@ -151,7 +156,9 @@ def update_persona(persona_id):
         'occupation_title': occupation_id,
         'industry_title': industry_id,
         'goals': [request.form.get('goal-one'), request.form.get('goal-two'), request.form.get('goal-three')],
-        'frustrations': [request.form.get('frustrations-one'), request.form.get('frustrations-two'), request.form.get('frustrations-three')],
+        'frustrations': [request.form.get('frustrations-one'), 
+        request.form.get('frustrations-two'), 
+        request.form.get('frustrations-three')],
         'creator': session['username'],
         'make_public': public
 
