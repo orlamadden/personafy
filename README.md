@@ -264,6 +264,10 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 - No errors.
 
+[PEP8 Compliance](http://pep8online.com/)
+
+- Fully compliant.
+
 ### Bugs Found
 
 #### Solved bugs
