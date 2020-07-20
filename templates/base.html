@@ -16,7 +16,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="{{url_for('static', filename='img/personafy-favicon.png') }}">
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='img/personafy-favicon.png') }}"
+    />
     <link
       rel="stylesheet"
       href="{{url_for('static', filename='css/styles.css') }}"
@@ -28,8 +31,13 @@
       <!-- Navigation menu -->
       <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{url_for('index')}}"
-          ><img src="{{url_for('static', filename='img/personafy-logo.png') }}" width="160" height="36" alt="Personafy logo"></a
-        >
+          ><img
+            src="{{url_for('static', filename='img/personafy-logo.png') }}"
+            width="160"
+            height="36"
+            alt="Personafy logo"
+        /></a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -95,7 +103,10 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#">
-                <span class="nav-btn-link"><i class="fas fa-user-alt mr-2"></i>{{ session['username'] }}</span>
+                <span class="nav-btn-link"
+                  ><i class="fas fa-user-alt mr-2"></i>{{ session['username']
+                  }}</span
+                >
               </a>
             </li>
             <li class="nav-item">
@@ -156,9 +167,7 @@
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link text-white"
-                href="{{url_for('register')}}"
+              <a class="nav-link text-white" href="{{url_for('register')}}"
                 ><span class="nav-btn-link"
                   ><i class="fas fa-user-plus mr-2"></i>Register</span
                 ></a
