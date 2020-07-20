@@ -21,10 +21,6 @@ mongo = PyMongo(app)
 db = mongo.db
 
 
-def get_persona(persona_id):
-    return db.persona.find_one({"_id": ObjectId(persona_id)})
-
-
 def registered_user(username):
     # function to find a registered username from the database
     user = db.user
