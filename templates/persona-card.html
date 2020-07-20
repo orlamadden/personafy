@@ -31,7 +31,7 @@
       <h6>Occupation: {{persona_occupation.occupation_title}}</h6>
       <h6>Industry: {{persona_industry.industry_title}}</h6>
       <p>Age: {{persona.age}}</p>
-      <div class="controls"><a href="#" id="print-btn" class="btn"
+      <a href="#" id="print-btn" class="btn"
       ><i class="fas fa-print mr-1"></i>Print</a
       >
       {% if persona.creator == session['username'] %}
@@ -46,7 +46,7 @@
       >
       <i class="fas fa-trash-alt mr-1"></i>
       Delete
-      </button></div>
+      </button>
       {% endif %}
     </div>
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
