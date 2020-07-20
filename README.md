@@ -182,6 +182,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 #### Add new occupation and industry
 
 - Give users the ability to create new job titles and industries and submit them to the database. This will give users more options when creating user personas.
+- Users are currently limited to what's currently in the dropdown.
 
 #### Content submission
 
