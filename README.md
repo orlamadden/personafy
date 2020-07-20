@@ -432,6 +432,7 @@ $ git push heroku master
 - Logout user was adapted from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session#:~:text=There%20is%20no%20way%20to,session%20dictionary%20will%20get%20erased.&text=I%20use%20session%20like%20this%20with%20flask%2C%20it%20does%20work.).
 - Clear session cache on logout was used from this [Stack Overflow post](https://stackoverflow.com/questions/27747578/how-do-i-clear-a-flask-session).
 - Assistance with sorting personas by most recent date adapted from this [Stack Overflow post](https://stackoverflow.com/questions/30642725/pymongo-sorting-by-date).
+- Inputting boolean data to my database was adapted from this [Slack thread](https://code-institute-room.slack.com/archives/C7JQY2RHC/p1560086576313500).
 
 ### Content
 
