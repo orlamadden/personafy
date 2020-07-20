@@ -96,6 +96,10 @@ footer ul {
     padding-right: 50px;
 }
 
+.footer-social i {
+    font-size: 1.6em;
+}
+
 /* public cards page */
 
 .job-title {
