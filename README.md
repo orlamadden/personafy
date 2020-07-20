@@ -210,7 +210,7 @@ This project utilises the NoSQL database MongoDB to store data. The reason for t
 
 ### Database Schema
 
-This project's database contains 4 main collections to store data.
+This project's database contains 4 main collections to store data. Please see below the structure (with some examples) used for this project's database:
 - Personas - stores data about user personas created by registered users [(example)](https://github.com/orlamadden/personafy/blob/master/database-schema/personas.json)
 - Industry - stores data about industries
 - Occupation - stores data about occupations
@@ -224,8 +224,6 @@ The types of data stored in MongoDB for this project are:
 - String
 - Array
 - Boolean
-
-### Database Collections Structure
 
 ## Testing
 
@@ -268,9 +266,11 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 - Fully compliant.
 
-### Bugs Found
+#### Other Testing
 
-#### Solved bugs
+- [Repsonsinator](https://www.responsinator.com/) - in conjunction with manual testing, this was used to check repsonsiveness on all devices
+
+### Bugs Found
 
 1. **Database displaying null values**
 
@@ -286,6 +286,11 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 - When users decide to create a username for Personafy, the same username could be input more than once.
 - To stop this from occuring, an if-else statement was created in the register function in app.py. It checks if a username already exists. If it exists, it flashes an error on the registration page and asks the user to try another name.
+
+4. **Users could create a password with 1 character or 90**
+
+- On the registration page, users were able to create a login using only 1 character
+- An if statement was created in the register() function in my app.py file to check the length of the password input and limit the character count to between 6 and 15 characters.
 
 ### User Story Testing
 
@@ -441,3 +446,4 @@ $ git push heroku master
 
 - I would like to thank my mentor Antonio Rodriquez for his help and support throughout this project.
 - Inspiration for this project was taken from Hubspot's [Make My Persona](https://www.hubspot.com/make-my-persona?__hstc=186349814.17b3501ea17becd7928a3c41e292c83e.1595179666946.1595179666946.1595179666946.1&__hssc=186349814.1.1595179666946&__hsfp=2585151190) web tool.
+- Encouragement from the incredible CI community on Slack.
