@@ -9,25 +9,27 @@ Using CRUD functionality, users can (C)reate, (R)ead, (U)pdate and (D)elete user
 ## Table of Contents
 
 1. [**UX**](#UX)
-    - [**Project Goals**](#project-goals)
+    - [**Project Purpose**](#project-purpose)
     - [**User Stories**](#user-stories)
     - [**Wireframes**](#wireframes)
     - [**Design Choices**](#design-choices)
 2. [**Features**](#features)
     - [**Existing Features**](#existing-features)
     - [**Recommendations for future implementation**](#recommendations-for-future-implementation)
-3. [**Technology**](#technology)
-    - [**Technologies used**](#frontend-technologies-used)
-    - [**Other**](#other)
-4. [**Testing**](#testing)
+3. [**Technologies Used**](#technologies-used)
+4. [**Information Architecture**](#information-architecture)
+    - [**Database Schema**](#database-schema)
+    - [**Data Storage Types**](#data-storage-types)
+5. [**Testing**](#testing)
+    - [**Manual Testing**](#manual-testing)
     - [**Validators used**](#validators-used)
-    - [**Manual Tests**](#manual-tests)
     - [**Bugs found**](#bugs-found)
     - [**User Story Testing**](#user-story-testing)
-5. [**Deployment**](#deployment)
-    - [**Publishing to GitHub Pages**](#publishing-to-github-pages)
+    - [**Other Testing**](#other-testing)
+6. [**Deployment**](#deployment)
+    - [**Local Deployment**](#local-deployment)
     - [**Deployment to Heroku**](#deployment-to-heroku)
-6. [**Credits**](#credits)
+7. [**Credits**](#credits)
     - [**Code**](#code)
     - [**Content**](#content)
     - [**Media**](#media)
@@ -163,7 +165,7 @@ For this project, I kept design and color to a minimum so users could focus on t
 
 - Registered users have the ability to keep personas private and not for public viewing. This is a required user story as the user may be using the user persona for a business project.
 
-### Recommended for future implementation
+### Recommendations for future implementation
 
 #### Multi-step form or wizard
 
@@ -266,10 +268,6 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 
 - Fully compliant.
 
-#### Other Testing
-
-- [Repsonsinator](https://www.responsinator.com/) - in conjunction with manual testing, this was used to check repsonsiveness on all devices
-
 ### Bugs Found
 
 1. **Database displaying null values**
@@ -330,6 +328,11 @@ To ensure the best user experience, I performed multiple manual tests to ensure 
 10. **As a user-contributor, I want to be able to log out of my account.**  
 :white_check_mark: Users can log out by clicking the 'Logout' button in the navigation bar.  
 :white_check_mark: A message flashes when a user successfully logs out.
+
+### Other Testing
+
+- [Repsonsinator](https://www.responsinator.com/) - in conjunction with manual testing, this was used to check repsonsiveness on all devices
+- Chrome DevTools - Dev Tools was used to check repsonsiveness of the website, and make changes in the web browser before implementing in the CSS. 
 
 ## Deployment
 
