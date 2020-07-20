@@ -24,6 +24,7 @@ messages %}
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm-12">
+      <!-- checks if a username is in session -->
       {% if 'username' in session %}
       <h2 class="text-center">{{ session['username'] }}'s Personas</h2>
       {% endif %}
@@ -33,15 +34,18 @@ messages %}
 <!-- main content -->
 <div class="container mt-5">
   <div class="row">
-    {% for persona in personas %} {% if persona.creator == session['username']
-    %}
+    {% for persona in personas %} 
+    <!-- prints out personas associated with the user in session -->
+    {% if persona.creator == session['username'] %}
     <div class="col-sm-12 col-md-6 col-lg-4 mb-5">
       <div class="card">
+      <!-- checks if the profile image string is NOT empty -->
         {% if persona.profile != "" %}
         <div class="image-wrap">
             <div class="card-image" style="background-image: url({{persona.profile}})">
             </div>
         </div>
+        <!-- displays placeholder profile image if string is empty -->
         {% else %}
         <div class="image-wrap">
             <div class="card-image" style="background-image: url(https://res.cloudinary.com/orla2020/image/upload/v1594968970/milestone-three/default-profile_vifnxy.jpg)">
@@ -51,15 +55,21 @@ messages %}
         <div class="card-body">
           <h5 class="card-title">{{persona.name}}</h5>
           <h6 class="card-text job-title">
+          <!-- loops through occupations in occupation collection -->
             {% for occ in occupation %}
+            <!-- if the persona title matches the occupation id -->
              {% if persona.occupation_title == occ["_id"] %}
+             <!-- print title of the occupation associated with persona -->
             {{occ['occupation_title']}}
             {% endif %}
             {% endfor %}
           </h6>
           <p class="card-text industry-title">
+          <!-- loops through industries in industry collection -->
            {% for ind in industry %}
+           <!-- if the persona title matches the industry id -->
              {% if persona.industry_title == ind["_id"] %}
+             <!-- print title of the industry associated with persona -->
             {{ind['industry_title']}} industry
             {% endif %}
             {% endfor %}

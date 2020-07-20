@@ -97,6 +97,7 @@
               <option value="please-select" selected disabled
                 >Please select...</option
               >
+              <!-- loops through occupations -->
               {% for job in occupation %}
               <option value="{{ job.occupation_title }}"
                 >{{ job.occupation_title }}</option
@@ -112,6 +113,7 @@
               <option value="please-select" selected disabled
                 >Please select...</option
               >
+              <!-- loops through industries -->
               {% for sector in industry %}
               <option value="{{ sector.industry_title }}"
                 >{{ sector.industry_title }}</option
