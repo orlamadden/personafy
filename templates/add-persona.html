@@ -37,7 +37,7 @@
               class="form-control"
               id="fname"
               name="fname"
-              placeholder="Full name"
+              required
             />
           </div>
           <div class="form-group">
@@ -55,9 +55,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="bio"
-              ><i class="fas fa-book"></i>User Persona Bio</label
-            >
+            <label for="bio"><i class="fas fa-book"></i>User Persona Bio</label>
             <textarea
               class="form-control"
               name="bio"
@@ -96,9 +94,13 @@
               name="occupation"
               required
             >
-              <option value="please-select" selected disabled>Please select...</option>
+              <option value="please-select" selected disabled
+                >Please select...</option
+              >
               {% for job in occupation %}
-              <option value="{{ job.occupation_title }}">{{ job.occupation_title }}</option>
+              <option value="{{ job.occupation_title }}"
+                >{{ job.occupation_title }}</option
+              >
               {% endfor %}
             </select>
           </div>
@@ -107,9 +109,13 @@
               ><i class="fas fa-store"></i>User Persona Industry</label
             >
             <select class="form-control" id="industry" name="industry" required>
-              <option value="please-select" selected disabled>Please select...</option>
+              <option value="please-select" selected disabled
+                >Please select...</option
+              >
               {% for sector in industry %}
-              <option value="{{ sector.industry_title }}">{{ sector.industry_title }}</option>
+              <option value="{{ sector.industry_title }}"
+                >{{ sector.industry_title }}</option
+              >
               {% endfor %}
             </select>
           </div>
